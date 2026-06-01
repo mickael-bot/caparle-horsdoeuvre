@@ -1,0 +1,134 @@
+/* ============================================================
+   THEME TOKENS — Design system modulaire
+   Tout le branding passe par ici. Swap Ça Parle ↔ Hors d'œuvre
+   via l'attribut [data-brand] sur <html>.
+   À porter tel quel vers /themes/ca-parle.ts en prod.
+   ============================================================ */
+
+:root {
+  /* ---- COULEURS (Ça Parle par défaut) ---- */
+  --c-primary:    #1131f8; /* Bright Indigo  — CTA, accents, fonds bloc */
+  --c-secondary:  #6e8dff; /* Cornflower Blue — dégradés, hover, liquid */
+  --c-tertiary:   #d6e0e8; /* Grey — fonds neutres, séparateurs */
+  --c-ink:        #061630; /* Black — texte / fond sombre */
+  --c-paper:      #ffffff; /* White */
+
+  /* Surfaces dérivées — CLAIR dominant (blanc + indigo du logo) */
+  --bg:           #ffffff;            /* blanc dominant */
+  --bg-alt:       #eef2f9;            /* gris très clair, rythme */
+  --bg-soft:      #ffffff;            /* cartes */
+  --bg-light:     #ffffff;
+  --bg-grey:      #e7edf6;
+  --fg:           var(--c-ink);       /* texte encre */
+  --fg-dim:       #56657f;            /* texte secondaire ardoise */
+  --line:         rgba(6,22,48,0.12);
+
+  /* Accent texte + placeholders média = bleu du logo */
+  --accent:       var(--c-primary);
+  --ph-base:      var(--c-primary);
+  --ph-stripe:    color-mix(in srgb, var(--c-primary) 80%, #000);
+  --ph-label:     rgba(255,255,255,0.72);
+
+  /* ---- LIQUID METAL — rampe chromée signature ---- */
+  --lm-0: #061630;
+  --lm-1: #1131f8;
+  --lm-2: #6e8dff;
+  --lm-3: #ffffff;
+  --lm-4: #d6e0e8;
+  --lm-5: #1131f8;
+  --lm-6: #061630;
+  --lm-tint: #6e8dff;       /* teinte des reflets / specular */
+  --lm-sat: 1;
+
+  /* ---- TYPOGRAPHIE ---- */
+  --font-display: "Space Grotesk", "Cy Grotesk", system-ui, sans-serif;
+  --font-body:    "Poppins", system-ui, sans-serif;
+  --display-weight: 700;
+  --display-tracking: -0.03em;
+  --display-case: none;
+
+  /* ---- IDENTITÉ / CONTENU ---- */
+  --brand-name: "ÇA PARLE";
+  --brand-radius: 4px;
+
+  /* ---- RYTHME ---- */
+  --maxw: 1400px;
+  --gutter: clamp(20px, 5vw, 96px);
+  --section-y: clamp(80px, 12vh, 180px);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================
+   .ink — bande saturée (bleu du logo) qui remplace le bleu nuit.
+   Générique : prend automatiquement la couleur primaire de la marque.
+   Posée sur : témoignages, footer.
+   ============================================================ */
+.ink {
+  background: var(--bg); color: var(--fg);
+  --bg:       var(--c-primary);
+  --bg-alt:   var(--c-primary);
+  --bg-soft:  color-mix(in srgb, var(--c-primary) 82%, #ffffff);
+  --bg-light: var(--c-primary);
+  --fg:       #ffffff;
+  --fg-dim:   rgba(255,255,255,0.74);
+  --line:     rgba(255,255,255,0.22);
+  --accent:   #ffffff;
+}
+
+/* ============================================================
+   THEME ALTERNATIF — Hors d'Œuvre (food studio du groupe Ça Parle)
+   Couleurs & typo d'après la charte de marque officielle.
+   ============================================================ */
+:root[data-brand="hors-doeuvre"] {
+  --c-primary:    #ff4817; /* Orange incandescent */
+  --c-secondary:  #2f2fff; /* Bleu électrique (rappel Ça Parle, parcimonie) */
+  --c-tertiary:   #bcbcc6; /* Chrome clair */
+  --c-ink:        #000000; /* Noir Studio */
+  --c-paper:      #ffffff;
+
+  --bg:           #ffffff;
+  --bg-alt:       #f0f0f2;            /* gris chrome très clair */
+  --bg-soft:      #ffffff;
+  --bg-light:     #ffffff;
+  --bg-grey:      #e6e6ea;
+  --fg:           #000000;
+  --fg-dim:       #6a6a72;
+  --line:         rgba(0,0,0,0.13);
+
+  --accent:       var(--c-primary);
+  --ph-base:      var(--c-primary);
+  --ph-stripe:    color-mix(in srgb, var(--c-primary) 78%, #000);
+
+  /* liquid metal → chrome argent (Chrome Clair de la charte) */
+  --lm-0: #000000;
+  --lm-1: #5f5f6a;
+  --lm-2: #bcbcc6;
+  --lm-3: #ffffff;
+  --lm-4: #bcbcc6;
+  --lm-5: #8a8a94;
+  --lm-6: #000000;
+  --lm-tint: #bcbcc6;
+
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body:    "Inter", system-ui, sans-serif;
+  --display-weight: 900;
+  --display-tracking: -0.04em;
+
+  --brand-name: "HORS D’ŒUVRE";
+}
+
+/* Charte : "blanc sur fond orange à proscrire" → bandes orange en NOIR */
+:root[data-brand="hors-doeuvre"] .ink {
+  --fg: #000000;
+  --fg-dim: rgba(0,0,0,0.66);
+  --line: rgba(0,0,0,0.20);
+  --accent: #000000;
+}
+/* Logotype "en pente" : Inter Black incliné */
+:root[data-brand="hors-doeuvre"] .nav-logo span,
+:root[data-brand="hors-doeuvre"] .footer-mark,
+:root[data-brand="hors-doeuvre"] .bt-side,
+:root[data-brand="hors-doeuvre"] .hero h1,
+:root[data-brand="hors-doeuvre"] .hero h1 em { font-style: italic; }
+/* Pas de chrome sur Hors d'Œuvre */
+:root[data-brand="hors-doeuvre"] .hero-sphere.main { display: none; }
