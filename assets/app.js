@@ -225,7 +225,7 @@
     heroSub: "Studio food événementiel du groupe Ça Parle. La cuisine devient un terrain de création — Marseille et partout ailleurs.",
     heroPill: "FOOD STUDIO",
     ctaBrief: 'Passons à table <span class="arrow">→</span>',
-    msHint: '<span class="bt-arrow">←</span> Faites parler votre événement',
+    msHint: '<span class="bt-arrow">←</span> Notre agence évènementiel',
     navAgence: "Le studio",
     adn:
       '\n      <span class="item">INSTINCT</span>\n      <span class="item">PRÉCISION</span>\n      <span class="item">LIBERTÉ</span>\n      <span class="item">AVANT-GARDE</span>\n      <span class="item">GOÛT</span>\n    ',
