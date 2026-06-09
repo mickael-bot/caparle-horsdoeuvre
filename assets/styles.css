@@ -420,5 +420,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Nav logo : src swappé par JS selon la marque */
 .nav-logo .nav-logo-img { display: block; height: 1em; width: auto; }
 
-/* Hero logo : src swappé par JS selon la marque */
-.hero-logo .hero-logo-img { display: block; width: min(80vw, 700px); height: auto; max-width: 100%; }
+/* Hero logo : image UNIQUEMENT en mode Ça Parle, texte en mode HDO */
+.hero-logo .hero-logo-img { display: block !important; width: min(80vw, 700px); height: auto; max-width: 100%; }
+.hero-logo .hero-logo-text { display: none !important; }
+:root[data-brand="hors-doeuvre"] .hero-logo .hero-logo-img { display: none !important; }
+:root[data-brand="hors-doeuvre"] .hero-logo .hero-logo-text { display: inline-flex !important; }
