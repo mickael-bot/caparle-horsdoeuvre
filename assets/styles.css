@@ -429,7 +429,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background-repeat: no-repeat;
   background-position: left center;
 }
+:root[data-brand="hors-doeuvre"] .hero-logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 :root[data-brand="hors-doeuvre"] .hero-logo .hero-logo-img {
+  width: min(90vw, 1200px);
   aspect-ratio: 879 / 167;
   background-image: url("logo-horsdoeuvre.png");
+  background-position: center center;
 }
