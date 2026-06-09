@@ -39,7 +39,7 @@
     <a href="#projets">Projets</a>
     <a href="#equipe">Équipe</a>
     <a href="#contact">Contact</a>
-    <a href="[GALERIE_URL]">Galerie</a>
+    <a href="#galerie" data-gallery>Galerie</a>
     <a href="#contact" class="btn" data-k="ctaBrief">Briefez-nous <span class="arrow">→</span></a>
   </div>
   <a href="#contact" class="btn desktop" style="display:none">Briefez-nous</a>
@@ -306,6 +306,17 @@
 
 <!-- STICKY CTA mobile -->
 <div class="sticky-cta"><a href="#contact" class="btn" data-k="ctaBrief">Briefez-nous <span class="arrow">→</span></a></div>
+
+<!-- ============================ MODALE GALERIE ============================ -->
+<div class="gallery-modal" id="gallery-modal" aria-hidden="true" role="dialog" aria-labelledby="gallery-title">
+  <button class="gallery-close" type="button" aria-label="Fermer la galerie">×</button>
+  <div class="gallery-content">
+    <h2 class="gallery-title" id="gallery-title">Galerie</h2>
+    <div class="gallery-grid">
+      <div class="gallery-empty">Photos à venir prochainement…</div>
+    </div>
+  </div>
+</div>
 
 <script src="assets/app.js"></script>
 </body>

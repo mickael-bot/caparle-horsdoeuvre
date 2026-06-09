@@ -304,6 +304,31 @@
   }
 
   /* ---------------------------------------------------------
+     GALERIE — ouverture/fermeture de la modale
+  --------------------------------------------------------- */
+  function initGallery() {
+    const modal = document.getElementById("gallery-modal");
+    if (!modal) return;
+    const closeBtn = modal.querySelector(".gallery-close");
+    const open = (e) => {
+      if (e) e.preventDefault();
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+    const close = () => {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+    document.querySelectorAll("[data-gallery]").forEach((a) => a.addEventListener("click", open));
+    closeBtn.addEventListener("click", close);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("open")) close();
+    });
+  }
+
+  /* ---------------------------------------------------------
      LOADER
   --------------------------------------------------------- */
   function initLoader() {
@@ -323,5 +348,5 @@
   function safe(fn) { try { fn(); } catch (err) { console.error("[caparle]", fn.name, err); } }
 
   initLoader(); // toujours en premier : garantit que le loader disparaît
-  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand].forEach(safe);
+  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery].forEach(safe);
 })();
