@@ -417,8 +417,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .quote { padding: 24px; }
 }
 
-/* Nav logo : image pour Ça Parle, texte pour Hors d'Œuvre */
-.nav-logo-img { display: block; height: 1.4em; width: auto; }
-.nav-logo-text { display: none; }
-:root[data-brand="hors-doeuvre"] .nav-logo-img { display: none; }
-:root[data-brand="hors-doeuvre"] .nav-logo-text { display: inline; }
+/* Nav logo : image pour les deux marques, swap via [data-brand] */
+.nav-logo-img { display: block; height: 1em; width: auto; }
+.nav-logo-hdo { display: none; }
+:root[data-brand="hors-doeuvre"] .nav-logo-cp { display: none; }
+:root[data-brand="hors-doeuvre"] .nav-logo-hdo { display: block; }
