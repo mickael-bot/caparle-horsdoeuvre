@@ -417,9 +417,5 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .quote { padding: 24px; }
 }
 
-/* Nav logo : image pour les deux marques, swap via [data-brand] */
+/* Nav logo : src swappé par JS selon la marque */
 .nav-logo .nav-logo-img { display: block; height: 1em; width: auto; }
-.nav-logo .nav-logo-hdo { display: none !important; }
-.nav-logo .nav-logo-cp { display: block !important; }
-:root[data-brand="hors-doeuvre"] .nav-logo .nav-logo-cp { display: none !important; }
-:root[data-brand="hors-doeuvre"] .nav-logo .nav-logo-hdo { display: block !important; }

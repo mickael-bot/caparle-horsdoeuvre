@@ -287,6 +287,8 @@
     if (brand === "ca-parle") root.removeAttribute("data-brand");
     else root.setAttribute("data-brand", brand);
     document.querySelectorAll("[data-brand-name]").forEach((el) => (el.textContent = NAMES[brand] || NAMES["ca-parle"]));
+    const navLogo = document.querySelector(".nav-logo-img");
+    if (navLogo) navLogo.src = brand === "hors-doeuvre" ? "assets/logo-horsdoeuvre.png" : "assets/logo-caparle.png";
     document.querySelectorAll("[data-set]").forEach((s) => s.classList.toggle("on", s.getAttribute("data-set") === brand));
     document.querySelectorAll(".bt-switch,[data-mini]").forEach((sw) => sw.setAttribute("aria-checked", brand === "hors-doeuvre" ? "true" : "false"));
     applyCopy(brand);
