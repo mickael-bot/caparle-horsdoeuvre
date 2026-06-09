@@ -418,7 +418,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* Nav logo : image pour les deux marques, swap via [data-brand] */
-.nav-logo-img { display: block; height: 1em; width: auto; }
-.nav-logo-hdo { display: none; }
-:root[data-brand="hors-doeuvre"] .nav-logo-cp { display: none; }
-:root[data-brand="hors-doeuvre"] .nav-logo-hdo { display: block; }
+.nav-logo .nav-logo-img { display: block; height: 1em; width: auto; }
+.nav-logo .nav-logo-hdo { display: none !important; }
+.nav-logo .nav-logo-cp { display: block !important; }
+:root[data-brand="hors-doeuvre"] .nav-logo .nav-logo-cp { display: none !important; }
+:root[data-brand="hors-doeuvre"] .nav-logo .nav-logo-hdo { display: block !important; }
