@@ -309,20 +309,24 @@
   function initGallery() {
     const modal = document.getElementById("gallery-modal");
     if (!modal) return;
-    const closeBtn = modal.querySelector(".gallery-close");
-    const open = (e) => {
-      if (e) e.preventDefault();
-      modal.classList.add("open");
-      modal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    };
     const close = () => {
       modal.classList.remove("open");
       modal.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
     };
-    document.querySelectorAll("[data-gallery]").forEach((a) => a.addEventListener("click", open));
-    closeBtn.addEventListener("click", close);
+    // Délégation : capte tout clic sur un élément [data-gallery] ou son enfant
+    document.addEventListener("click", (e) => {
+      const trigger = e.target.closest("[data-gallery]");
+      if (trigger) {
+        e.preventDefault();
+        e.stopPropagation();
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        return;
+      }
+      if (e.target.closest(".gallery-close")) close();
+    });
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && modal.classList.contains("open")) close();
     });
