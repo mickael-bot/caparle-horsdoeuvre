@@ -416,3 +416,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .marquee .item { font-size: 2.4rem; }
   .quote { padding: 24px; }
 }
+
+/* Nav logo : image pour Ça Parle, texte pour Hors d'Œuvre */
+.nav-logo-img { display: block; height: 1.4em; width: auto; }
+.nav-logo-text { display: none; }
+:root[data-brand="hors-doeuvre"] .nav-logo-img { display: none; }
+:root[data-brand="hors-doeuvre"] .nav-logo-text { display: inline; }
