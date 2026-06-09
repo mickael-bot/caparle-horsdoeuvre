@@ -17,7 +17,7 @@ body {
   transition: background .6s var(--ease), color .6s var(--ease);
 }
 
-@media (pointer: fine) { body { cursor: none; } }
+/* Curseur OS natif (custom cursor désactivé) */
 
 ::selection { background: var(--c-primary); color: #fff; }
 
@@ -47,18 +47,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .6; }
 
 /* ============================================================
-   CUSTOM CURSOR (chrome)
+   CUSTOM CURSOR — désactivé (curseur OS natif partout)
    ============================================================ */
-.cursor, .cursor-dot { position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none; border-radius: 50%; mix-blend-mode: difference; }
-.cursor {
-  width: 38px; height: 38px; margin: -19px 0 0 -19px;
-  border: 1px solid rgba(255,255,255,.8);
-  transition: width .25s var(--ease), height .25s var(--ease), margin .25s var(--ease), background .25s, border-color .25s;
-}
-.cursor-dot { width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px; background: #fff; }
-.cursor.is-hover { width: 64px; height: 64px; margin: -32px 0 0 -32px; background: rgba(255,255,255,.12); border-color: transparent; }
-.cursor.is-hover + .cursor-dot { opacity: 0; }
-@media (pointer: coarse) { .cursor, .cursor-dot { display: none; } }
+.cursor, .cursor-dot { display: none !important; }
 
 /* ============================================================
    LOADER — sphère chromée qui se forme
@@ -458,16 +449,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .gallery-modal.open { display: block; }
 
-/* Curseur coloré quand la galerie est ouverte (sinon invisible sur fond blanc) */
-body.gallery-open .cursor {
-  background: var(--c-primary);
-  border-color: var(--c-primary);
-  mix-blend-mode: normal;
-}
-body.gallery-open .cursor-dot {
-  background: var(--c-primary);
-  mix-blend-mode: normal;
-}
 .gallery-close {
   position: fixed; top: 24px; right: 24px; z-index: 10001;
   width: 48px; height: 48px; border-radius: 50%;
