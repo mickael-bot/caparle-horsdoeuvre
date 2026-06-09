@@ -312,6 +312,7 @@
     const close = () => {
       modal.classList.remove("open");
       modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("gallery-open");
       document.body.style.overflow = "";
     };
     // Délégation : capte tout clic sur un élément [data-gallery] ou son enfant
@@ -322,6 +323,7 @@
         e.stopPropagation();
         modal.classList.add("open");
         modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("gallery-open");
         document.body.style.overflow = "hidden";
         return;
       }
