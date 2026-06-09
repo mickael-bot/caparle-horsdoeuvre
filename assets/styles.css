@@ -416,22 +416,3 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .marquee .item { font-size: 2.4rem; }
   .quote { padding: 24px; }
 }
-
-/* ============================================================
-   LOGOS DE MARQUE — bascule Ça Parle / Hors d'Œuvre via [data-brand]
-   ============================================================ */
-.brand-logo { display: block; max-width: 100%; height: auto; }
-.brand-logo.brand-hdo { display: none; }
-:root[data-brand="hors-doeuvre"] .brand-logo.brand-cp { display: none; }
-:root[data-brand="hors-doeuvre"] .brand-logo.brand-hdo { display: block; }
-
-/* Tailles par emplacement */
-.nav-logo .brand-logo { height: 34px; width: auto; }
-.nav-logo .brand-logo.brand-hdo { height: 22px; } /* logo HDO plus large, on compense */
-
-.hero-logo { display: flex; align-items: center; }
-.hero-logo .brand-logo { width: min(680px, 78vw); height: auto; max-width: 100%; }
-.hero-logo .brand-logo.brand-hdo { width: min(820px, 86vw); }
-
-.footer-mark .brand-logo { width: min(720px, 86vw); height: auto; max-width: 100%; filter: brightness(0) invert(1); }
-.footer-mark .brand-logo.brand-hdo { width: min(820px, 90vw); }
