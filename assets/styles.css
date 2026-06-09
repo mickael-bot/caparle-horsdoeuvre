@@ -421,23 +421,26 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .nav-logo .nav-logo-img { display: block; height: 1em; width: auto; }
 
 /* Hero logo : background-image, swap natif via [data-brand] */
+.hero-logo {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+}
 .hero-logo .hero-logo-img {
   display: block;
-  width: min(80vw, 700px);
-  height: calc(min(80vw, 700px) * 325 / 695);
-  background-image: url(logo-caparle.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left center;
+  width: 80vw;
+  max-width: 700px;
+  height: 37.4vw;
+  max-height: 327px;
+  background: url("logo-caparle.png") no-repeat left center / contain;
 }
 :root[data-brand="hors-doeuvre"] .hero-logo {
-  display: flex !important;
   justify-content: center;
-  width: 100%;
 }
 :root[data-brand="hors-doeuvre"] .hero-logo .hero-logo-img {
-  width: min(90vw, 1200px);
-  height: calc(min(90vw, 1200px) * 167 / 879);
-  background-image: url(logo-horsdoeuvre.png);
-  background-position: center center;
+  width: 90vw;
+  max-width: 1200px;
+  height: 17.1vw;
+  max-height: 228px;
+  background: url("logo-horsdoeuvre.png") no-repeat center center / contain;
 }
