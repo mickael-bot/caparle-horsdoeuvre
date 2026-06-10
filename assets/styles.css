@@ -199,7 +199,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .sec-head p { color: var(--fg-dim); max-width: 36ch; }
 
 .proj-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(14px, 1.6vw, 26px); }
-.proj { position: relative; border-radius: var(--brand-radius); overflow: hidden; background: var(--bg-soft); aspect-ratio: 4/3; }
+.proj { position: relative; border-radius: var(--brand-radius); overflow: hidden; background: var(--bg-soft); }
+.proj.c7 { aspect-ratio: 4/3; }
 .proj .ph { width: 100%; height: 100%; }
 .proj.feat { grid-column: span 12; }
 .proj.feat { aspect-ratio: 21/9; }
@@ -425,6 +426,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 @media (max-width: 760px) {
   .proj.feat, .proj.c6, .proj.c5, .proj.c7, .proj.c4 { grid-column: span 12; }
+  .proj { aspect-ratio: 4/3; }
   .proj.feat { aspect-ratio: 16/10; }
   .pillars { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
@@ -652,6 +654,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ============================================================
    Logo Ça Parle : dans l'espace vide du manifeste + à la place du grand titre footer
    ============================================================ */
-.manifesto-logo { display: block; width: clamp(150px, 22vw, 290px); height: auto; margin-top: clamp(20px, 3.5vh, 48px); }
+.manifesto-logo { display: block; width: clamp(150px, 22vw, 290px); height: auto; margin: clamp(20px, 3.5vh, 48px) auto 0; transform: translateX(clamp(12px, 3vw, 44px)); }
 :root[data-brand="hors-doeuvre"] .manifesto-logo { display: none; }
 .footer-logo { height: clamp(90px, 13vw, 180px); width: auto; display: block; filter: brightness(0) invert(1); }
+
+/* Resserre l'espace entre le bandeau chrome clients (#projets) et la section Équipe */
+#projets { padding-bottom: 0; }
+#equipe { padding-top: clamp(24px, 4vh, 48px); padding-bottom: clamp(20px, 3vh, 36px); }
+/* Resserre l'espace entre l'Équipe (ARKT) et Preuves sociales */
+.section.testi { padding-top: clamp(20px, 3vh, 36px); }

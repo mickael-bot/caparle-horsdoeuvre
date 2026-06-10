@@ -467,8 +467,9 @@
       // Fond photo optionnel (atténué) via data-modal-bg
       const bg = proj.getAttribute("data-modal-bg");
       const veil = proj.getAttribute("data-modal-bg-veil") || "0.85";
+      const pos = proj.getAttribute("data-modal-bg-pos") || "center";
       modal.style.background = bg
-        ? "linear-gradient(rgba(255,255,255," + veil + "), rgba(255,255,255," + veil + ")), url('" + bg + "') center / cover no-repeat"
+        ? "linear-gradient(rgba(255,255,255," + veil + "), rgba(255,255,255," + veil + ")), url('" + bg + "') " + pos + " / cover no-repeat"
         : "";
       modal.classList.add("open");
       modal.setAttribute("aria-hidden", "false");
