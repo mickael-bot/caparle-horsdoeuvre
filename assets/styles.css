@@ -186,6 +186,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .pillars { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; margin-top: 70px; background: var(--line); border: 1px solid var(--line); }
 .pillar { background: var(--bg-alt); padding: 30px clamp(20px,2.4vw,38px); transition: background .35s; }
 .pillar:hover { background: var(--bg-grey); }
+a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointer; }
 .pillar .n { font-family: "Space Mono", monospace; font-size: .72rem; color: var(--accent); }
 .pillar h4 { font-family: var(--font-display); font-weight: 700; font-size: 1.45rem; margin: 14px 0 8px; }
 .pillar p { font-size: .92rem; color: var(--fg-dim); }
@@ -225,7 +226,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .clients {
   margin-top: clamp(60px, 8vh, 110px);
   width: 100vw; margin-left: calc(50% - 50vw);
-  padding: clamp(44px, 7vh, 90px) var(--gutter);
+  padding: clamp(24px, 4vh, 50px) var(--gutter);
   background:
     linear-gradient(177deg,
       #c2c7cf 0%, #eef0f3 9%, #aab0ba 22%, #f4f6f8 34%,
@@ -236,7 +237,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .logos { display: flex; overflow: hidden; }
 .logos .track { display: inline-flex; align-items: center; gap: 0; animation: marq 32s linear infinite; flex: none; }
 .logos:hover .track { animation-play-state: paused; }
-.logos .logo { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.1rem,2vw,1.7rem); color: var(--fg-dim); opacity: .55; transition: opacity .3s, color .3s; white-space: nowrap; letter-spacing: -.01em; }
+.logos .logo { font-family: var(--font-display); font-weight: 700; font-size: clamp(0.85rem,1.5vw,1.3rem); color: var(--fg-dim); opacity: .55; transition: opacity .3s, color .3s; white-space: nowrap; letter-spacing: -.01em; }
 .logos .logo:hover { opacity: 1; color: var(--fg); }
 
 /* ============================================================
@@ -602,6 +603,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    Titre « L'équipe. » : bleu (Ça Parle) / orange (Hors d'Œuvre)
    ============================================================ */
 #equipe .sec-head h2 { color: var(--accent); }
+/* Sous-titre Équipe placé sous le titre (et non à droite) */
+#equipe .sec-head { flex-direction: column; align-items: flex-start; gap: 14px; }
 
 /* ============================================================
    Bande de marque (toggle) : fond bleu (Ça Parle) / orange (HDO)
@@ -646,7 +649,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    Bandeau clients défilant « Ils nous ont fait confiance »
    Fond bleu (Ça Parle) / orange (Hors d'Œuvre)
    ============================================================ */
-.logos { background: var(--accent); padding-block: clamp(14px, 2.2vh, 24px); padding-inline: clamp(20px, 3vw, 44px); border-radius: 100px; }
+.logos { background: var(--accent); padding-block: clamp(8px, 1.4vh, 15px); padding-inline: clamp(20px, 3vw, 44px); border-radius: 100px; }
 .logos .logo { color: #fff; opacity: .85; }
 .logos .logo:hover { color: #fff; opacity: 1; }
 .logos .logo::after { content: "•"; display: inline-block; margin-inline: clamp(22px, 4vw, 52px); color: #fff; opacity: .55; font-weight: 400; }
@@ -660,6 +663,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* Resserre l'espace entre le bandeau chrome clients (#projets) et la section Équipe */
 #projets { padding-bottom: 0; }
-#equipe { padding-top: clamp(24px, 4vh, 48px); padding-bottom: clamp(20px, 3vh, 36px); }
+#equipe { padding-top: clamp(40px, 6vh, 76px); padding-bottom: clamp(20px, 3vh, 36px); }
 /* Resserre l'espace entre l'Équipe (ARKT) et Preuves sociales */
 .section.testi { padding-top: clamp(20px, 3vh, 36px); }
