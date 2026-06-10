@@ -37,20 +37,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding-inline: var(--gutter); }
 .section { padding-block: var(--section-y); position: relative; }
 .section.alt { background: var(--bg-alt); }
-/* Ça Parle uniquement : fond chromé sur la section manifeste (#agence). Exclut Hors d'Œuvre (qui porte data-brand). */
-:root:not([data-brand]) #agence {
+/* Les deux marques : fond chromé sur la section manifeste (#agence). */
+#agence {
   background:
     linear-gradient(177deg,
       #c2c7cf 0%, #eef0f3 9%, #aab0ba 22%, #f4f6f8 34%,
       #9aa1ac 47%, #fbfcfd 52%, #a6adb7 60%, #e9ebef 74%,
       #b4bac4 88%, #d8dce1 100%);
 }
-/* Ça Parle uniquement : le bandeau défilant garde un fond blanc (pas le chrome) */
-:root:not([data-brand]) #agence .marquee { background: #fff; }
-/* Ça Parle uniquement : les 4 paragraphes du manifeste en blanc gras (hors accroche et phrase finale) */
-:root:not([data-brand]) #agence .manifesto .body p:not(.mbody-end) { color: #fff; font-weight: 700; }
-/* Ça Parle uniquement : panneau « acier » sombre derrière la colonne de texte → le blanc ressort mieux */
-:root:not([data-brand]) #agence .manifesto .body {
+/* Les deux marques : le bandeau défilant garde un fond blanc (pas le chrome) */
+#agence .marquee { background: #fff; }
+/* Les deux marques : les paragraphes du manifeste en blanc gras (hors phrase .mbody-end, traitée juste après) */
+#agence .manifesto .body p:not(.mbody-end) { color: #fff; font-weight: 700; }
+/* Les deux marques : panneau « acier » sombre derrière la colonne de texte → le blanc ressort mieux */
+#agence .manifesto .body {
   background:
     linear-gradient(168deg,
       #565b63 0%, #71767f 12%, #3e424a 28%, #5c616a 44%,
@@ -59,7 +59,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: 8px;
 }
 /* la phrase finale reste lisible sur le panneau sombre */
-:root:not([data-brand]) #agence .manifesto .body .mbody-end { color: #fff; }
+#agence .manifesto .body .mbody-end { color: #fff; }
 .section.flush { padding-top: 0; }
 
 .eyebrow {
@@ -168,10 +168,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ============================================================
    MANIFESTE
    ============================================================ */
-.marquee { overflow: hidden; white-space: nowrap; border-block: 1px solid var(--line); padding-block: 26px; display: flex; }
+.marquee { overflow: hidden; white-space: nowrap; border-block: 1px solid var(--line); padding-block: 13px; display: flex; }
 .marquee .track { display: inline-flex; gap: 0; flex: none; animation: marq 26s linear infinite; }
 .marquee:hover .track { animation-play-state: paused; }
-.marquee .item { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 6vw, 5rem); letter-spacing: -.02em; padding-inline: clamp(20px, 3vw, 60px); display: inline-flex; align-items: center; gap: clamp(20px,3vw,60px); }
+.marquee .item { font-family: var(--font-display); font-weight: 700; font-size: clamp(1rem, 3vw, 2.5rem); letter-spacing: -.02em; padding-inline: clamp(20px, 3vw, 60px); display: inline-flex; align-items: center; gap: clamp(20px,3vw,60px); }
 .marquee .item::after { content: "✦"; font-size: .4em; color: var(--accent); }
 .marquee.alt .track { animation-duration: 38s; animation-direction: reverse; }
 .marquee.outline .item { color: transparent; -webkit-text-stroke: 1.2px var(--fg-dim); }
@@ -430,7 +430,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .bt-hint { font-size: .58rem; letter-spacing: .1em; gap: 7px; }
   .hero-cta { width: 100%; }
   .hero-cta .btn { flex: 1 1 auto; justify-content: center; }
-  .marquee .item { font-size: 2.4rem; }
+  .marquee .item { font-size: 1.2rem; }
   .quote { padding: 24px; }
 }
 
