@@ -64,11 +64,13 @@
 <!-- ============================ MANIFESTE ============================ -->
 <section class="section" id="agence">
   <!-- SWITCH de marque : Ça Parle ⇄ Hors d'œuvre, juste au-dessus du marquee -->
-  <p class="bt-hint" data-k="msHint">Passez à table avec notre studio food <span class="bt-arrow">→</span></p>
-  <div class="brand-toggle" role="group" aria-label="Basculer entre Ça Parle et Hors d'œuvre">
-    <span class="bt-side bt-left on" data-set="ca-parle">Ça Parle<span class="bt-dot"></span></span>
-    <button class="bt-switch" type="button" role="switch" aria-checked="false" aria-label="Basculer de marque"><span class="knob"></span></button>
-    <span class="bt-side bt-right" data-set="hors-doeuvre"><span class="bt-dot"></span>Hors d'œuvre</span>
+  <div class="brand-band">
+    <p class="bt-hint" data-k="msHint">Passez à table avec notre studio food <span class="bt-arrow">→</span></p>
+    <div class="brand-toggle" role="group" aria-label="Basculer entre Ça Parle et Hors d'œuvre">
+      <span class="bt-side bt-left on" data-set="ca-parle">Ça Parle<span class="bt-dot"></span></span>
+      <button class="bt-switch" type="button" role="switch" aria-checked="false" aria-label="Basculer de marque"><span class="knob"></span></button>
+      <span class="bt-side bt-right" data-set="hors-doeuvre"><span class="bt-dot"></span>Hors d'œuvre</span>
+    </div>
   </div>
 
   <!-- marquee ADN -->
@@ -199,9 +201,9 @@
   <div class="wrap">
     <div class="eyebrow reveal" style="margin-bottom:46px">Preuves sociales</div>
     <div class="quotes" data-stagger data-k="quotes">
-      <figure class="quote"><div class="mark">“</div><p>[TESTIMONIAL_1] — une citation client courte et percutante à compléter dans VS Code.</p><figcaption class="who">[NOM] · [ENTREPRISE]</figcaption></figure>
-      <figure class="quote"><div class="mark">“</div><p>[TESTIMONIAL_2] — l'énergie était exactement là où il fallait, au bon moment.</p><figcaption class="who">[NOM] · [ENTREPRISE]</figcaption></figure>
-      <figure class="quote"><div class="mark">“</div><p>[TESTIMONIAL_3] — ils ont transformé un brief flou en un vrai moment collectif.</p><figcaption class="who">[NOM] · [ENTREPRISE]</figcaption></figure>
+      <figure class="quote"><div class="mark">“</div><p>Dès l'entrée, le décor impose le ton. Un lieu magnifique, une déco soignée jusque dans le moindre détail, et cette lumière bleue devenue la signature de Ça Parle. Hyper original, classe, chic, et surtout, ça change. On sent qu'on passe un cap.</p><figcaption class="who">(nom) · (entreprise)</figcaption></figure>
+      <figure class="quote"><div class="mark">“</div><p>Ça Parle, c'est réunir les talents et leur donner de la lumière. Rien qu'à voir ceux présents ce soir, ça annonce du positif. Faire bouger les choses à Marseille, montrer qu'ici aussi on sait faire : on en avait besoin.</p><figcaption class="who">(nom) · (entreprise)</figcaption></figure>
+      <figure class="quote"><div class="mark">“</div><p>Que dire ? Magnifique. Habitués aux soirées marseillaises, on a été soufflés. L'énergie, les détails cachés dans le décor, cette signature qu'on ne retrouve nulle part ailleurs. Inimitable. Ça Parle, vraiment, et ça va continuer de faire parler.</p><figcaption class="who">(nom) · (entreprise)</figcaption></figure>
     </div>
   </div>
 </section>
@@ -257,6 +259,16 @@
     <div class="gallery-grid">
       <div class="gallery-empty">Photos à venir prochainement…</div>
     </div>
+  </div>
+</div>
+
+<!-- ===================== PROJET (modale, contenu à venir) ===================== -->
+<div class="project-modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+  <button class="project-close" type="button" aria-label="Fermer">×</button>
+  <div class="project-modal-inner">
+    <div class="pm-tag" id="pm-tag"></div>
+    <h2 class="pm-title" id="pm-title"></h2>
+    <p class="pm-placeholder">Contenu à venir.</p>
   </div>
 </div>
 

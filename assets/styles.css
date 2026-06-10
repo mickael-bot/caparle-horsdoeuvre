@@ -586,3 +586,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .brief-modal-inner .intro { margin-bottom: clamp(28px, 4vh, 48px); }
 .contact-cta { margin-top: clamp(20px, 3vh, 36px); }
+
+/* ============================================================
+   Titre « L'équipe. » : bleu (Ça Parle) / orange (Hors d'Œuvre)
+   ============================================================ */
+#equipe .sec-head h2 { color: var(--accent); }
+
+/* ============================================================
+   Bande de marque (toggle) : fond bleu (Ça Parle) / orange (HDO)
+   ============================================================ */
+.brand-band { background: var(--accent); padding: clamp(28px, 5vh, 50px) var(--gutter); margin-bottom: var(--section-y); }
+.brand-band .bt-hint { color: #fff; }
+.brand-band .brand-toggle { padding-bottom: 0; }
+.brand-band .bt-side { color: rgba(255,255,255,0.6); }
+.brand-band .bt-side.on { color: #fff; }
+.brand-band .bt-side.on .bt-dot { background: #fff; }
+.brand-band .bt-switch { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.45); }
+
+/* ============================================================
+   PROJET — modale ouverte au clic sur une carte (contenu à venir)
+   ============================================================ */
+.proj { cursor: pointer; }
+.project-modal {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  display: none; overflow-y: auto; overscroll-behavior: contain;
+}
+.project-modal.open { display: grid; place-items: center; }
+.project-close {
+  position: fixed; top: 24px; right: 24px; z-index: 10001;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--c-primary); color: #fff;
+  font-size: 28px; line-height: 1; cursor: pointer;
+  border: none; display: flex; align-items: center; justify-content: center;
+  transition: transform .3s var(--ease);
+}
+.project-close:hover { transform: scale(1.1); }
+.project-modal-inner { width: min(720px, 92vw); padding: clamp(40px, 7vw, 80px) clamp(20px, 4vw, 40px); text-align: center; }
+.pm-tag { font-family: "Space Mono", monospace; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.pm-title { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 5vw, 3.6rem); letter-spacing: -.02em; line-height: 1; }
+.pm-placeholder { margin-top: 22px; color: var(--fg-dim); font-family: "Space Mono", monospace; font-size: .85rem; letter-spacing: .1em; }

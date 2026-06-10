@@ -269,7 +269,7 @@
     team:
       '\n    <article class="member" data-hover data-modal-bg="assets/adrien-bg.jpg">\n      <div class="avatar"><div class="ph"><img src="assets/adrien.jpg" alt="Adrien Bacqueville" style="object-position:center 45%"></div></div>\n      <div><div class="n">DIRECTION</div><h4>Adrien Bacqueville</h4><div class="role">Chef & Directeur créatif</div><p class="xp">Une cuisine instinctive, précise et contemporaine, construite autour du produit et du goût juste. Comme un directeur créatif, il impulse une vision.</p></div>\n    </article>\n    <article class="member" data-hover>\n      <div class="avatar"><div class="ph"><img src="assets/colombine.jpg" alt="Colombine"></div></div>\n      <div><div class="n">DÉVELOPPEMENT</div><h4>Colombine</h4><div class="role">Direction & Relation clients</div><p class="xp">Pilote les projets et la relation avec les marques. Le point de contact entre les clients et le studio.</p></div>\n    </article>\n    <article class="member solo" data-hover>\n      <div class="avatar"><div class="ph logo-ph"><img src="assets/arkt.png" alt="ARKT"></div></div>\n      <div><div class="n">MARQUE & COMMUNICATION</div><h4>ARKT</h4><div class="role">Partenaire marque & communication</div><p class="xp">Accompagne Hors d\'Œuvre sur tout le volet marque et communication : stratégie de marque, identité et direction artistique.</p></div>\n    </article>\n  ',
     quotes:
-      '\n      <figure class="quote"><div class="mark">“</div><p>[TÉMOIGNAGE_1] — une table qui a fait parler tout l\'événement.</p><figcaption class="who">[NOM] · [ENTREPRISE]</figcaption></figure>\n      <figure class="quote"><div class="mark">“</div><p>[TÉMOIGNAGE_2] — le goût au service du récit de marque, exactement.</p><figcaption class="who">[NOM] · [ENTREPRISE]</figcaption></figure>\n      <figure class="quote"><div class="mark">“</div><p>[TÉMOIGNAGE_3] — une exécution irréprochable, du premier geste à la dernière bouchée.</p><figcaption class="who">[NOM] · [ENTREPRISE]</figcaption></figure>\n    ',
+      '\n      <figure class="quote"><div class="mark">“</div><p>Le banquet est tout simplement incroyable. Un festin généreux, raffiné, pensé dans le moindre détail. Dès la première bouchée, l\'effet est immédiat : impressionnant.</p><figcaption class="who">(nom) · (entreprise)</figcaption></figure>\n      <figure class="quote"><div class="mark">“</div><p>Vraiment, le buffet est ouf. Gourmand, audacieux, sans la moindre fausse note, la preuve que la food peut être un vrai spectacle. Inimitable.</p><figcaption class="who">(nom) · (entreprise)</figcaption></figure>\n      <figure class="quote"><div class="mark">“</div><p>On vient découvrir Hors d\'Œuvre pour la partie food, voir ce que ça donne… et on repart conquis. Un savoir-faire qui se goûte autant qu\'il se montre. Magnifique.</p><figcaption class="who">(nom) · (entreprise)</figcaption></figure>\n    ',
     cEyebrow: "On passe à table",
     cTitle: "Passons à table.",
     cIntro: "Dites-nous ce que vous voulez faire goûter. On compose le moment — du concept à la dernière bouchée.",
@@ -436,6 +436,39 @@
   }
 
   /* ---------------------------------------------------------
+     PROJET — modale ouverte au clic sur une carte projet
+     (contenu à compléter plus tard). Marche pour les deux marques.
+  --------------------------------------------------------- */
+  function initProjectModal() {
+    const modal = document.getElementById("project-modal");
+    if (!modal) return;
+    const tag = modal.querySelector("#pm-tag");
+    const title = modal.querySelector("#pm-title");
+    const open = (proj) => {
+      const t = proj.querySelector(".tag");
+      const h = proj.querySelector("h3");
+      tag.textContent = t ? t.textContent : "";
+      title.innerHTML = h ? h.innerHTML : "";
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+    const close = () => {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+    document.addEventListener("click", (e) => {
+      const proj = e.target.closest(".proj");
+      if (proj && !modal.contains(e.target)) { e.preventDefault(); open(proj); return; }
+      if (e.target.closest(".project-close") || e.target === modal) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("open")) close();
+    });
+  }
+
+  /* ---------------------------------------------------------
      LOADER
   --------------------------------------------------------- */
   function initLoader() {
@@ -455,5 +488,5 @@
   function safe(fn) { try { fn(); } catch (err) { console.error("[caparle]", fn.name, err); } }
 
   initLoader(); // toujours en premier : garantit que le loader disparaît
-  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal].forEach(safe);
+  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initProjectModal].forEach(safe);
 })();
