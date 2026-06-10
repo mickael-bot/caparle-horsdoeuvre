@@ -256,7 +256,7 @@
     navAgence: "Le studio",
     adn:
       '\n      <span class="item">INSTINCT</span>\n      <span class="item">PRÉCISION</span>\n      <span class="item">LIBERTÉ</span>\n      <span class="item">AVANT-GARDE</span>\n      <span class="item">GOÛT</span>\n    ',
-    mLead: 'Hors d\'Œuvre traite la <b>table comme une pièce</b> — chaque événement est une composition.',
+    mLead: 'Hors d\'Œuvre traite la <b>table comme une pièce</b>, chaque événement est une composition.',
     mBody:
       "\n        <p>Hors d'Œuvre est un food studio événementiel qui transforme la gastronomie en expérience de marque.</p>\n        <p>Ni traiteur classique, ni simple service culinaire, Hors d'Œuvre imagine la cuisine comme un langage visuel, sensoriel et émotionnel. Chaque table, chaque plat, chaque détail devient une intention : une façon de raconter une marque, de créer une atmosphère et de provoquer un souvenir.</p>\n        <p class=\"mbody-end\">Ici, on compose des moments <b>plus qu'on ne sert à manger.</b></p>\n        <p>Des expériences pensées avec la précision d'un studio créatif, l'exigence d'une brigade et l'audace d'une direction artistique contemporaine.</p>\n      ",
     pillars:
