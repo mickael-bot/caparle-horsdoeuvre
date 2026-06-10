@@ -45,6 +45,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       #9aa1ac 47%, #fbfcfd 52%, #a6adb7 60%, #e9ebef 74%,
       #b4bac4 88%, #d8dce1 100%);
 }
+/* Ça Parle uniquement : le bandeau défilant garde un fond blanc (pas le chrome) */
+:root:not([data-brand]) #agence .marquee { background: #fff; }
+/* Ça Parle uniquement : les 4 paragraphes du manifeste en blanc gras (hors accroche et phrase finale) */
+:root:not([data-brand]) #agence .manifesto .body p:not(.mbody-end) { color: #fff; font-weight: 700; }
 .section.flush { padding-top: 0; }
 
 .eyebrow {
