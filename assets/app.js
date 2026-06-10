@@ -464,6 +464,12 @@
         textEl.style.display = "none";
         if (placeholder) placeholder.style.display = "";
       }
+      // Fond photo optionnel (atténué) via data-modal-bg
+      const bg = proj.getAttribute("data-modal-bg");
+      const veil = proj.getAttribute("data-modal-bg-veil") || "0.85";
+      modal.style.background = bg
+        ? "linear-gradient(rgba(255,255,255," + veil + "), rgba(255,255,255," + veil + ")), url('" + bg + "') center / cover no-repeat"
+        : "";
       modal.classList.add("open");
       modal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
