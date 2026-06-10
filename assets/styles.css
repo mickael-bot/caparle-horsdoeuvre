@@ -221,10 +221,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .feat .tag { border-color: #fff; }
 
 /* clients */
-.clients { margin-top: clamp(60px, 8vh, 110px); }
+.clients {
+  margin-top: clamp(60px, 8vh, 110px);
+  width: 100vw; margin-left: calc(50% - 50vw);
+  padding: clamp(44px, 7vh, 90px) var(--gutter);
+  background:
+    linear-gradient(177deg,
+      #c2c7cf 0%, #eef0f3 9%, #aab0ba 22%, #f4f6f8 34%,
+      #9aa1ac 47%, #fbfcfd 52%, #a6adb7 60%, #e9ebef 74%,
+      #b4bac4 88%, #d8dce1 100%);
+}
 .clients .lbl { font-family:"Space Mono",monospace; font-size:.7rem; letter-spacing:.24em; text-transform:uppercase; color:var(--fg-dim); text-align:center; margin-bottom: 30px; }
 .logos { display: flex; overflow: hidden; }
-.logos .track { display: inline-flex; align-items: center; gap: clamp(40px, 6vw, 96px); animation: marq 32s linear infinite; flex: none; padding-right: clamp(40px,6vw,96px); }
+.logos .track { display: inline-flex; align-items: center; gap: 0; animation: marq 32s linear infinite; flex: none; }
 .logos:hover .track { animation-play-state: paused; }
 .logos .logo { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.1rem,2vw,1.7rem); color: var(--fg-dim); opacity: .55; transition: opacity .3s, color .3s; white-space: nowrap; letter-spacing: -.01em; }
 .logos .logo:hover { opacity: 1; color: var(--fg); }
@@ -638,6 +647,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .logos { background: var(--accent); padding-block: clamp(14px, 2.2vh, 24px); padding-inline: clamp(20px, 3vw, 44px); border-radius: 100px; }
 .logos .logo { color: #fff; opacity: .85; }
 .logos .logo:hover { color: #fff; opacity: 1; }
+.logos .logo::after { content: "•"; display: inline-block; margin-inline: clamp(22px, 4vw, 52px); color: #fff; opacity: .55; font-weight: 400; }
 
 /* ============================================================
    Logo Ça Parle : dans l'espace vide du manifeste + à la place du grand titre footer
