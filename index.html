@@ -40,7 +40,7 @@
     <a href="#equipe">Équipe</a>
     <a href="#contact">Contact</a>
     <a href="#galerie" data-gallery>Galerie</a>
-    <a href="#contact" class="btn" data-k="ctaBrief">Briefez-nous <span class="arrow">→</span></a>
+    <a href="#contact" class="btn" data-brief data-k="ctaBrief">Briefez-nous <span class="arrow">→</span></a>
   </div>
   <a href="#contact" class="btn desktop" style="display:none">Briefez-nous</a>
   <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -55,7 +55,7 @@
     </h1>
     <p class="hero-tagline reveal" data-k="heroTitle">L'agence qui provoque des montées d'<em>endorphines</em>.</p>
     <div class="hero-cta reveal">
-      <a href="#contact" class="btn" data-k="ctaBrief">Briefez-nous <span class="arrow">→</span></a>
+      <a href="#contact" class="btn" data-brief data-k="ctaBrief">Briefez-nous <span class="arrow">→</span></a>
       <a href="#projets" class="btn ghost">Voir les projets</a>
     </div>
   </div>
@@ -213,7 +213,61 @@
     <h2 class="reveal" data-k="cTitle">Briefez-nous.</h2>
     <p class="intro reveal" data-k="cIntro">Dites-nous ce que vous voulez faire vibrer. On revient vers vous sous 48h, sans fioriture.</p>
 
-    <form id="brief-form" class="reveal">
+    <div class="contact-cta reveal">
+      <button type="button" class="btn" data-brief data-k="ctaBrief">Briefez-nous <span class="arrow">→</span></button>
+    </div>
+
+    <div class="coords reveal" data-k="coords">
+      <div class="col"><div class="k">Adresse</div><p>[à définir]</p></div>
+      <div class="col"><div class="k">Email</div><a href="#" data-hover>[à définir]</a></div>
+      <div class="col"><div class="k">Téléphone</div><a href="#" data-hover>[à définir]</a></div>
+      <div class="col"><div class="k">Réseaux</div><span class="social" data-social="cp"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer ink">
+  <div class="wrap">
+    <div class="footer-mark display"><span data-brand-name>ÇA&nbsp;PARLE</span><sup style="font-size:.12em;margin-left:.1em">●</sup></div>
+
+    <p class="footer-tag" data-k="footerTag">Quand l'énergie est juste, tout le monde se reconnaît. Marseille et partout ailleurs.</p>
+
+    <div class="footer-bottom">
+      <div class="footer-links">
+        <a href="#contact" data-brief>Briefez-nous</a>
+        <a href="#">Mentions légales</a>
+        <a href="#">Presse</a>
+        <span class="social" data-k="footerSocial" data-social="cp"></span>
+      </div>
+      <a href="#agence" class="footer-sister" data-hover data-k="footerSister">Découvrir Hors d'œuvre →</a>
+    </div>
+    <div class="credits">© 2026 Ça Parle — L'énergie a une forme.</div>
+  </div>
+</footer>
+
+<!-- STICKY CTA mobile -->
+<div class="sticky-cta"><a href="#contact" class="btn" data-brief data-k="ctaBrief">Briefez-nous <span class="arrow">→</span></a></div>
+
+<!-- ============================ MODALE GALERIE ============================ -->
+<div class="gallery-modal" id="gallery-modal" aria-hidden="true" role="dialog" aria-labelledby="gallery-title">
+  <button class="gallery-close" type="button" aria-label="Fermer la galerie">×</button>
+  <div class="gallery-content">
+    <h2 class="gallery-title" id="gallery-title">Galerie</h2>
+    <div class="gallery-grid">
+      <div class="gallery-empty">Photos à venir prochainement…</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== BRIEF (modale formulaire) ===================== -->
+<div class="brief-modal" id="brief-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="brief-modal-title">
+  <button class="brief-close" type="button" aria-label="Fermer le formulaire">×</button>
+  <div class="brief-modal-inner">
+    <div class="eyebrow" data-k="cEyebrow">On vous écoute</div>
+    <h2 id="brief-modal-title" data-k="cTitle">Briefez-nous.</h2>
+    <p class="intro" data-k="cIntro">Dites-nous ce que vous voulez faire vibrer. On revient vers vous sous 48h, sans fioriture.</p>
+    <form id="brief-form">
       <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
       <div class="form-grid">
         <div class="field"><label>Nom</label><input type="text" name="nom" placeholder="Votre nom" required /></div>
@@ -243,47 +297,6 @@
       </div>
       <div class="form-ok"><span>✦</span> Brief reçu. On vous rappelle très vite.</div>
     </form>
-
-    <div class="coords reveal" data-k="coords">
-      <div class="col"><div class="k">Adresse</div><p>[à définir]</p></div>
-      <div class="col"><div class="k">Email</div><a href="#" data-hover>[à définir]</a></div>
-      <div class="col"><div class="k">Téléphone</div><a href="#" data-hover>[à définir]</a></div>
-      <div class="col"><div class="k">Réseaux</div><span class="social" data-social="cp"></span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ FOOTER ============================ -->
-<footer class="footer ink">
-  <div class="wrap">
-    <div class="footer-mark display"><span data-brand-name>ÇA&nbsp;PARLE</span><sup style="font-size:.12em;margin-left:.1em">●</sup></div>
-
-    <p class="footer-tag" data-k="footerTag">Quand l'énergie est juste, tout le monde se reconnaît. Marseille et partout ailleurs.</p>
-
-    <div class="footer-bottom">
-      <div class="footer-links">
-        <a href="#contact">Briefez-nous</a>
-        <a href="#">Mentions légales</a>
-        <a href="#">Presse</a>
-        <span class="social" data-k="footerSocial" data-social="cp"></span>
-      </div>
-      <a href="#agence" class="footer-sister" data-hover data-k="footerSister">Découvrir Hors d'œuvre →</a>
-    </div>
-    <div class="credits">© 2026 Ça Parle — L'énergie a une forme.</div>
-  </div>
-</footer>
-
-<!-- STICKY CTA mobile -->
-<div class="sticky-cta"><a href="#contact" class="btn" data-k="ctaBrief">Briefez-nous <span class="arrow">→</span></a></div>
-
-<!-- ============================ MODALE GALERIE ============================ -->
-<div class="gallery-modal" id="gallery-modal" aria-hidden="true" role="dialog" aria-labelledby="gallery-title">
-  <button class="gallery-close" type="button" aria-label="Fermer la galerie">×</button>
-  <div class="gallery-content">
-    <h2 class="gallery-title" id="gallery-title">Galerie</h2>
-    <div class="gallery-grid">
-      <div class="gallery-empty">Photos à venir prochainement…</div>
-    </div>
   </div>
 </div>
 

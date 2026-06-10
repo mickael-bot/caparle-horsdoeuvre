@@ -402,6 +402,35 @@
   }
 
   /* ---------------------------------------------------------
+     BRIEF — modale formulaire ouverte par les CTA [data-brief]
+     (Briefez-nous / Passons à table) sur les deux marques.
+  --------------------------------------------------------- */
+  function initBriefModal() {
+    const modal = document.getElementById("brief-modal");
+    if (!modal) return;
+    const open = () => {
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      const first = modal.querySelector("input[name='nom']");
+      if (first) setTimeout(() => first.focus(), 50);
+    };
+    const close = () => {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+    document.addEventListener("click", (e) => {
+      const trigger = e.target.closest("[data-brief]");
+      if (trigger) { e.preventDefault(); open(); return; }
+      if (e.target.closest(".brief-close") || e.target === modal) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("open")) close();
+    });
+  }
+
+  /* ---------------------------------------------------------
      LOADER
   --------------------------------------------------------- */
   function initLoader() {
@@ -421,5 +450,5 @@
   function safe(fn) { try { fn(); } catch (err) { console.error("[caparle]", fn.name, err); } }
 
   initLoader(); // toujours en premier : garantit que le loader disparaît
-  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal].forEach(safe);
+  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal].forEach(safe);
 })();
