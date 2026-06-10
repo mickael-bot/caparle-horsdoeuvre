@@ -554,7 +554,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .mm-cat { font-family: "Space Mono", monospace; font-size: .72rem; color: var(--accent); letter-spacing: .14em; text-transform: uppercase; }
 .mm-name { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.02em; margin: 10px 0 6px; }
 .mm-role { font-size: 1.05rem; color: var(--fg); font-weight: 500; margin-bottom: 18px; }
-.mm-text { font-size: .98rem; color: var(--fg-dim); line-height: 1.6; white-space: pre-line; max-width: 52ch; }
+.mm-text { font-size: .98rem; color: var(--fg); font-weight: 500; line-height: 1.6; white-space: pre-line; max-width: 52ch; }
 @media (max-width: 760px) {
   .member-modal-inner { grid-template-columns: 1fr; }
   .mm-photo { width: 168px; }
