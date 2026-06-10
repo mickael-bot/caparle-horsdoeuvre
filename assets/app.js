@@ -477,9 +477,11 @@
         if (gallery[i]) {
           cell.style.backgroundImage = "url('" + gallery[i] + "')";
           cell.classList.add("filled");
+          cell.setAttribute("data-img", gallery[i]);
         } else {
           cell.style.backgroundImage = "";
           cell.classList.remove("filled");
+          cell.removeAttribute("data-img");
         }
       });
       modal.classList.add("open");
@@ -502,6 +504,23 @@
   }
 
   /* ---------------------------------------------------------
+     LIGHTBOX — agrandit une photo de galerie au clic
+  --------------------------------------------------------- */
+  function initLightbox() {
+    const lb = document.getElementById("lightbox");
+    if (!lb) return;
+    const img = lb.querySelector("#lightbox-img");
+    const open = (src) => { img.src = src; lb.classList.add("open"); lb.setAttribute("aria-hidden", "false"); };
+    const close = () => { lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true"); img.src = ""; };
+    document.addEventListener("click", (e) => {
+      const cell = e.target.closest(".pm-cell.filled");
+      if (cell && cell.getAttribute("data-img")) { open(cell.getAttribute("data-img")); return; }
+      if (e.target === lb || e.target.closest(".lightbox-close")) close();
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && lb.classList.contains("open")) close(); });
+  }
+
+  /* ---------------------------------------------------------
      LOADER
   --------------------------------------------------------- */
   function initLoader() {
@@ -521,5 +540,5 @@
   function safe(fn) { try { fn(); } catch (err) { console.error("[caparle]", fn.name, err); } }
 
   initLoader(); // toujours en premier : garantit que le loader disparaît
-  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initProjectModal].forEach(safe);
+  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initProjectModal, initLightbox].forEach(safe);
 })();
