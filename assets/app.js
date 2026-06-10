@@ -335,6 +335,46 @@
   }
 
   /* ---------------------------------------------------------
+     FICHE MEMBRE — modale ouverte au clic sur un membre de l'équipe.
+     Lit les infos directement sur la carte cliquée (photo, nom, rôle,
+     texte) → fonctionne pour les deux marques sans contenu en dur.
+  --------------------------------------------------------- */
+  function initMemberModal() {
+    const modal = document.getElementById("member-modal");
+    if (!modal) return;
+    const photo = modal.querySelector("#mm-photo");
+    const cat = modal.querySelector("#mm-cat");
+    const name = modal.querySelector("#mm-name");
+    const role = modal.querySelector("#mm-role");
+    const text = modal.querySelector("#mm-text");
+    const open = (member) => {
+      const avatar = member.querySelector(".avatar");
+      photo.innerHTML = avatar ? avatar.innerHTML : "";
+      const pick = (sel) => { const el = member.querySelector(sel); return el ? el.textContent : ""; };
+      cat.textContent = pick(".n");
+      name.textContent = pick("h4");
+      role.textContent = pick(".role");
+      text.textContent = member.getAttribute("data-bio") || pick(".xp");
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+    const close = () => {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+    document.addEventListener("click", (e) => {
+      const member = e.target.closest(".member");
+      if (member && !modal.contains(e.target)) { open(member); return; }
+      if (e.target.closest(".member-close") || e.target === modal) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("open")) close();
+    });
+  }
+
+  /* ---------------------------------------------------------
      LOADER
   --------------------------------------------------------- */
   function initLoader() {
@@ -354,5 +394,5 @@
   function safe(fn) { try { fn(); } catch (err) { console.error("[caparle]", fn.name, err); } }
 
   initLoader(); // toujours en premier : garantit que le loader disparaît
-  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery].forEach(safe);
+  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal].forEach(safe);
 })();
