@@ -319,7 +319,8 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .footer { background: var(--bg); padding-block: clamp(50px,7vh,90px) 36px; position: relative; overflow: hidden; }
 .footer-mark { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 11vw, 8.5rem); line-height: .9; letter-spacing: -.03em; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--fg); margin: 0 0 clamp(22px, 3vh, 40px); white-space: nowrap; }
 /* Hors d'Œuvre uniquement : masque le grand titre de marque en bas de page */
-/* Footer logo par marque : "C" Ça Parle / wordmark Hors d'Œuvre */
+/* Footer logo : uniquement sur Hors d'Œuvre (orange), pas sur Ça Parle (bleu) */
+:root:not([data-brand]) .footer-mark { display: none; }
 .footer-logo-hdo { display: none; }
 :root[data-brand="hors-doeuvre"] .footer-logo-cp { display: none; }
 :root[data-brand="hors-doeuvre"] .footer-logo-hdo { display: block; height: clamp(48px, 8vw, 110px); }
