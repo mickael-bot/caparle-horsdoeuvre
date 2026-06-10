@@ -638,3 +638,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .logos { background: var(--accent); padding-block: clamp(14px, 2.2vh, 24px); padding-inline: clamp(20px, 3vw, 44px); border-radius: 100px; }
 .logos .logo { color: #fff; opacity: .85; }
 .logos .logo:hover { color: #fff; opacity: 1; }
+
+/* ============================================================
+   Logo Ça Parle : dans l'espace vide du manifeste + à la place du grand titre footer
+   ============================================================ */
+.manifesto-logo { grid-column: 1; justify-self: center; align-self: center; width: clamp(120px, 15vw, 190px); height: auto; margin-top: clamp(16px, 3vh, 40px); }
+:root[data-brand="hors-doeuvre"] .manifesto-logo { display: none; }
+.footer-logo { height: clamp(90px, 13vw, 180px); width: auto; display: block; filter: brightness(0) invert(1); }
