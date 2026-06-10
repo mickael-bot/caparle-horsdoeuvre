@@ -433,9 +433,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 :root[data-brand="hors-doeuvre"] .hero-logo .hero-logo-img {
   width: 90vw;
-  max-width: 1200px;
+  max-width: 879px;
   height: 17.1vw;
-  max-height: 228px;
+  max-height: 167px;
   background: url("logo-horsdoeuvre.png") no-repeat center center / contain;
 }
 
