@@ -49,6 +49,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 :root:not([data-brand]) #agence .marquee { background: #fff; }
 /* Ça Parle uniquement : les 4 paragraphes du manifeste en blanc gras (hors accroche et phrase finale) */
 :root:not([data-brand]) #agence .manifesto .body p:not(.mbody-end) { color: #fff; font-weight: 700; }
+/* Ça Parle uniquement : panneau « acier » sombre derrière la colonne de texte → le blanc ressort mieux */
+:root:not([data-brand]) #agence .manifesto .body {
+  background:
+    linear-gradient(168deg,
+      #565b63 0%, #71767f 12%, #3e424a 28%, #5c616a 44%,
+      #2e323a 58%, #565b64 74%, #3a3e46 90%, #4a4e57 100%);
+  padding: clamp(22px, 2.6vw, 38px);
+  border-radius: 8px;
+}
+/* la phrase finale reste lisible sur le panneau sombre */
+:root:not([data-brand]) #agence .manifesto .body .mbody-end { color: #fff; }
 .section.flush { padding-top: 0; }
 
 .eyebrow {
