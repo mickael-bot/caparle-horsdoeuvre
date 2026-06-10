@@ -628,7 +628,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .project-modal-inner { width: min(720px, 92vw); margin: 0 auto; padding: clamp(64px, 10vh, 110px) clamp(20px, 4vw, 40px) 80px; text-align: center; }
 .pm-text { white-space: pre-line; text-align: left; color: var(--fg); font-size: 1rem; line-height: 1.7; max-width: 64ch; margin: 26px auto 0; }
 .pm-tag { font-family: "Space Mono", monospace; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.pm-title { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 5vw, 3.6rem); letter-spacing: -.02em; line-height: 1; }
+.pm-title { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.5rem, 3.4vw, 2.4rem); letter-spacing: -.02em; line-height: 1.05; }
 .pm-placeholder { margin-top: 22px; color: var(--fg-dim); font-family: "Space Mono", monospace; font-size: .85rem; letter-spacing: .1em; }
 
 /* ============================================================
