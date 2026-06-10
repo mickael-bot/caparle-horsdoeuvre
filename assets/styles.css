@@ -475,8 +475,11 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
   max-height: 187px;
   background: url("logo-horsdoeuvre.png") no-repeat center center / contain;
 }
-/* Hors d'Œuvre : descend le contenu du hero près de la bande orange */
-:root[data-brand="hors-doeuvre"] .hero { justify-content: flex-end; padding-bottom: clamp(24px, 5vh, 60px); }
+/* Hors d'Œuvre : logo centré dans la zone haute, tagline + CTA collés en bas (près de la bande orange) */
+:root[data-brand="hors-doeuvre"] .hero { padding-bottom: clamp(24px, 5vh, 60px); }
+:root[data-brand="hors-doeuvre"] .hero-inner { flex: 1; display: flex; flex-direction: column; }
+:root[data-brand="hors-doeuvre"] .hero-logo { margin-top: auto; }
+:root[data-brand="hors-doeuvre"] .hero-tagline { margin-top: auto; }
 
 /* ============================================================
    GALERIE — modale plein écran
