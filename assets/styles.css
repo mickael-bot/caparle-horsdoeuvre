@@ -521,6 +521,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .ph.logo-ph { background: #fff; }
 .ph.logo-ph > img { object-fit: contain; object-position: center; padding: 16%; }
 .member .avatar .ph.logo-ph { filter: none; }
+/* Avatars avec une vraie image (photo/logo) : toujours en couleur, pas de N&B par défaut */
+.member .avatar .ph:has(img) { filter: none; }
 .member-modal {
   position: fixed; inset: 0; z-index: 9999;
   background: rgba(255, 255, 255, 0.97);
