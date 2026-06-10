@@ -385,7 +385,7 @@
       // Fond optionnel (photo en arrière-plan, atténuée) si le membre porte data-modal-bg
       const bg = member.getAttribute("data-modal-bg");
       modal.style.background = bg
-        ? "linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82)), url('" + bg + "') center / cover no-repeat"
+        ? "linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)), url('" + bg + "') center / cover no-repeat"
         : "";
       modal.classList.add("open");
       modal.setAttribute("aria-hidden", "false");
