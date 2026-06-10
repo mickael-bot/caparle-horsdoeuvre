@@ -629,3 +629,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .pm-tag { font-family: "Space Mono", monospace; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
 .pm-title { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 5vw, 3.6rem); letter-spacing: -.02em; line-height: 1; }
 .pm-placeholder { margin-top: 22px; color: var(--fg-dim); font-family: "Space Mono", monospace; font-size: .85rem; letter-spacing: .1em; }
+
+/* ============================================================
+   Bandeau clients défilant « Ils nous ont fait confiance »
+   Fond bleu (Ça Parle) / orange (Hors d'Œuvre)
+   ============================================================ */
+.logos { background: var(--accent); padding-block: clamp(14px, 2.2vh, 24px); padding-inline: clamp(20px, 3vw, 44px); border-radius: 100px; }
+.logos .logo { color: #fff; opacity: .85; }
+.logos .logo:hover { color: #fff; opacity: 1; }
