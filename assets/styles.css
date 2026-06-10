@@ -595,7 +595,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ============================================================
    Bande de marque (toggle) : fond bleu (Ça Parle) / orange (HDO)
    ============================================================ */
-.brand-band { background: var(--accent); padding: clamp(28px, 5vh, 50px) var(--gutter); margin-bottom: var(--section-y); }
+#agence { padding-top: 0; }
+.brand-band { background: var(--accent); padding: clamp(28px, 5vh, 50px) var(--gutter); margin-bottom: 0; }
 .brand-band .bt-hint { color: #fff; }
 .brand-band .brand-toggle { padding-bottom: 0; }
 .brand-band .bt-side { color: rgba(255,255,255,0.6); }
