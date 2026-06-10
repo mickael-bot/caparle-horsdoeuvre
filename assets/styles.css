@@ -662,7 +662,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 /* Lightbox : agrandissement d'une photo de galerie */
 .lightbox { position: fixed; inset: 0; z-index: 10050; background: rgba(8, 12, 20, .92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center; padding: 5vmin; }
 .lightbox.open { display: flex; }
-.lightbox-img { max-width: 92vw; max-height: 90vh; object-fit: contain; border-radius: 8px; box-shadow: 0 24px 70px -12px rgba(0, 0, 0, .65); }
+.lightbox-img { width: min(380px, 85vw); height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; box-shadow: 0 24px 70px -12px rgba(0, 0, 0, .65); }
 .lightbox-close { position: fixed; top: 24px; right: 24px; z-index: 10051; width: 48px; height: 48px; border-radius: 50%; background: var(--c-primary); color: #fff; font-size: 28px; line-height: 1; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform .3s var(--ease); }
 .lightbox-close:hover { transform: scale(1.1); }
 
