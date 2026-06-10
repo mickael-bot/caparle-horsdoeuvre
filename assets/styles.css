@@ -119,7 +119,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    HERO
    ============================================================ */
 .hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; position: relative; padding-top: 110px; padding-bottom: 60px; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url(hero-bg-dna.jpg) no-repeat right -40px center / auto 130%; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url(hero-bg-dna.png) no-repeat right center / auto 130%; }
 :root[data-brand="hors-doeuvre"] .hero-bg { background: linear-gradient(rgba(255,255,255,0.20), rgba(255,255,255,0.20)), url(hero-bg-hdo.jpg) no-repeat center center / cover; }
 .hero-bg-label { display: none; }
 :root[data-brand="hors-doeuvre"] .hero-bg-label { display: block; }
