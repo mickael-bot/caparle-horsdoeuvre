@@ -37,6 +37,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding-inline: var(--gutter); }
 .section { padding-block: var(--section-y); position: relative; }
 .section.alt { background: var(--bg-alt); }
+/* Ça Parle uniquement : fond chromé sur la section manifeste (#agence). Exclut Hors d'Œuvre (qui porte data-brand). */
+:root:not([data-brand]) #agence {
+  background:
+    linear-gradient(177deg,
+      #c2c7cf 0%, #eef0f3 9%, #aab0ba 22%, #f4f6f8 34%,
+      #9aa1ac 47%, #fbfcfd 52%, #a6adb7 60%, #e9ebef 74%,
+      #b4bac4 88%, #d8dce1 100%);
+}
 .section.flush { padding-top: 0; }
 
 .eyebrow {
