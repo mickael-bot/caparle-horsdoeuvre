@@ -197,10 +197,37 @@
   function initForm() {
     const form = document.querySelector("#brief-form");
     if (!form) return;
+    // Email de réception (FormSubmit, sans inscription) — vaut pour les deux marques.
+    const ENDPOINT = "https://formsubmit.co/ajax/mickael@arkt-conseil.com";
+    const submitBtn = form.querySelector('button[type="submit"]');
+    // Empêche de choisir une date passée pour l'événement.
+    const deadline = form.querySelector('input[name="deadline"]');
+    if (deadline) deadline.min = new Date().toISOString().split("T")[0];
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      form.querySelector(".form-grid").style.display = "none";
-      document.querySelector(".form-ok").classList.add("show");
+      // La validation HTML native (champs "required") bloque déjà l'envoi si incomplet.
+      const brand = document.documentElement.getAttribute("data-brand") === "hors-doeuvre" ? "Hors d'Œuvre" : "Ça Parle";
+      const data = new FormData(form);
+      data.append("Marque", brand);
+      data.append("_subject", "Nouvelle demande — " + brand);
+      data.append("_template", "table");
+      data.append("_captcha", "false");
+
+      const original = submitBtn ? submitBtn.innerHTML : "";
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Envoi…"; }
+
+      fetch(ENDPOINT, { method: "POST", headers: { Accept: "application/json" }, body: data })
+        .then((r) => r.json().catch(() => ({})).then((j) => ({ ok: r.ok, j })))
+        .then(({ ok }) => {
+          if (!ok) throw new Error("HTTP");
+          form.querySelector(".form-grid").style.display = "none";
+          document.querySelector(".form-ok").classList.add("show");
+        })
+        .catch(() => {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = original; }
+          alert("L'envoi a échoué. Réessayez, ou écrivez directement à mickael@arkt-conseil.com.");
+        });
     });
   }
 

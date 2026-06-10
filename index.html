@@ -214,11 +214,12 @@
     <p class="intro reveal" data-k="cIntro">Dites-nous ce que vous voulez faire vibrer. On revient vers vous sous 48h, sans fioriture.</p>
 
     <form id="brief-form" class="reveal">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
       <div class="form-grid">
         <div class="field"><label>Nom</label><input type="text" name="nom" placeholder="Votre nom" required /></div>
-        <div class="field"><label>Entreprise</label><input type="text" name="entreprise" placeholder="Votre structure" /></div>
+        <div class="field"><label>Entreprise</label><input type="text" name="entreprise" placeholder="Votre structure" required /></div>
         <div class="field"><label>Email</label><input type="email" name="email" placeholder="vous@exemple.com" required /></div>
-        <div class="field"><label>Téléphone</label><input type="tel" name="tel" placeholder="+33…" /></div>
+        <div class="field"><label>Téléphone</label><input type="tel" name="tel" placeholder="+33…" required /></div>
         <div class="field">
           <label>Type de projet</label>
           <select name="type" required data-k="cTypes">
@@ -228,12 +229,12 @@
         </div>
         <div class="field">
           <label>Budget indicatif</label>
-          <select name="budget">
+          <select name="budget" required>
             <option value="" disabled selected>Choisir…</option>
             <option>&lt; 20k €</option><option>20 – 50k €</option><option>50 – 100k €</option><option>100k € +</option><option>À discuter</option>
           </select>
         </div>
-        <div class="field full"><label>Deadline / Date événement</label><input type="text" name="deadline" placeholder="ex. Septembre 2026, ou date précise" /></div>
+        <div class="field full"><label>Deadline / Date événement</label><input type="date" name="deadline" required /></div>
         <div class="field full"><label>Décrivez votre projet</label><textarea name="message" placeholder="Le contexte, l'ambiance recherchée, le public, vos contraintes…"></textarea></div>
         <div class="form-submit">
           <p class="note" data-k="formNote">En envoyant ce brief, vous acceptez d'être recontacté par l'équipe Ça Parle.</p>
