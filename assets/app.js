@@ -471,6 +471,17 @@
       modal.style.background = bg
         ? "linear-gradient(rgba(255,255,255," + veil + "), rgba(255,255,255," + veil + ")), url('" + bg + "') " + pos + " / cover no-repeat"
         : "";
+      // Galerie : remplit les 10 cases depuis data-modal-gallery (URLs séparées par "|")
+      var gallery = (proj.getAttribute("data-modal-gallery") || "").split("|").map(function (u) { return u.trim(); }).filter(Boolean);
+      modal.querySelectorAll(".pm-cell").forEach(function (cell, i) {
+        if (gallery[i]) {
+          cell.style.backgroundImage = "url('" + gallery[i] + "')";
+          cell.classList.add("filled");
+        } else {
+          cell.style.backgroundImage = "";
+          cell.classList.remove("filled");
+        }
+      });
       modal.classList.add("open");
       modal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
