@@ -688,7 +688,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 /* Logo manifeste par marque : "C" Ça Parle / wordmark orange Hors d'Œuvre */
 .manifesto-logo-hdo { display: none; }
 :root[data-brand="hors-doeuvre"] .manifesto-logo-cp { display: none; }
-:root[data-brand="hors-doeuvre"] .manifesto-logo-hdo { display: block; width: clamp(200px, 30vw, 380px); }
+:root[data-brand="hors-doeuvre"] .manifesto-logo-hdo { display: block; width: clamp(200px, 30vw, 380px); margin-left: 0; margin-right: auto; transform: none; }
 .footer-logo { height: clamp(90px, 13vw, 180px); width: auto; display: block; filter: brightness(0) invert(1); }
 
 /* Resserre l'espace entre le bandeau chrome clients (#projets) et la section Équipe */
