@@ -47,7 +47,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 /* Ça Parle : vidéo de fond à la place du chrome (HDO garde le chrome) */
 .agence-bg-video, .agence-bg-veil { display: none; position: absolute; inset: 0; z-index: 0; }
-:root:not([data-brand]) .agence-bg-video, :root:not([data-brand]) .agence-bg-veil { display: block; }
+.agence-bg-video, .agence-bg-veil { display: block; }
 .agence-bg-video { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 .agence-bg-veil { background: rgba(255, 255, 255, 0.45); pointer-events: none; }
 #agence > .brand-band, #agence > .marquee, #agence > .wrap { position: relative; z-index: 1; }
@@ -696,10 +696,10 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 
 /* Ça Parle : vidéo de fond derrière les piliers (#piliers) */
 .piliers-bg-video, .piliers-bg-veil { display: none; position: absolute; inset: 0; z-index: 0; }
-:root:not([data-brand]) .piliers-bg-video, :root:not([data-brand]) .piliers-bg-veil { display: block; }
+.piliers-bg-video, .piliers-bg-veil { display: block; }
 .piliers-bg-video { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 .piliers-bg-veil { background: rgba(255, 255, 255, 0.4); pointer-events: none; }
 #piliers > .wrap { position: relative; z-index: 1; }
-:root:not([data-brand]) #piliers .pillar { background: rgba(255, 255, 255, 0.45); }
-:root:not([data-brand]) #piliers .pillar:hover { background: rgba(255, 255, 255, 0.65); }
-:root:not([data-brand]) #piliers .pillars { background: transparent; border-color: rgba(255, 255, 255, 0.4); }
+#piliers .pillar { background: rgba(255, 255, 255, 0.45); }
+#piliers .pillar:hover { background: rgba(255, 255, 255, 0.65); }
+#piliers .pillars { background: transparent; border-color: rgba(255, 255, 255, 0.4); }
