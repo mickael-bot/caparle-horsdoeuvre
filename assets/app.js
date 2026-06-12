@@ -325,7 +325,7 @@
     const root = document.documentElement;
     const current = () => (root.getAttribute("data-brand") === "hors-doeuvre" ? "hors-doeuvre" : "ca-parle");
     const flip = () => applyBrand(current() === "ca-parle" ? "hors-doeuvre" : "ca-parle");
-    document.querySelectorAll(".bt-switch,[data-mini]").forEach((sw) => sw.addEventListener("click", flip));
+    document.querySelectorAll(".bt-switch,[data-mini],.footer-sister").forEach((sw) => sw.addEventListener("click", flip));
     document.querySelectorAll("[data-set]").forEach((s) => s.addEventListener("click", () => applyBrand(s.getAttribute("data-set"))));
     applyBrand(current()); // applique le contenu au chargement (+ double le marquee ADN)
   }
