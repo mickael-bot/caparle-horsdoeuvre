@@ -272,7 +272,7 @@
       '\n      <figure class="quote"><div class="mark">“</div><p>Le banquet est tout simplement incroyable. Un festin généreux, raffiné, pensé dans le moindre détail. Dès la première bouchée, l\'effet est immédiat : impressionnant.</p><figcaption class="who">(nom) · (entreprise)</figcaption></figure>\n      <figure class="quote"><div class="mark">“</div><p>Vraiment, le buffet est ouf. Gourmand, audacieux, sans la moindre fausse note, la preuve que la food peut être un vrai spectacle. Inimitable.</p><figcaption class="who">(nom) · (entreprise)</figcaption></figure>\n      <figure class="quote"><div class="mark">“</div><p>On vient découvrir Hors d\'Œuvre pour la partie food, voir ce que ça donne… et on repart conquis. Un savoir-faire qui se goûte autant qu\'il se montre. Magnifique.</p><figcaption class="who">(nom) · (entreprise)</figcaption></figure>\n    ',
     cEyebrow: "On passe à table",
     cTitle: "Passons à table.",
-    cIntro: "Dites-nous ce que vous voulez faire goûter. On compose le moment — du concept à la dernière bouchée.",
+    cIntro: "Dites-nous ce que vous voulez faire goûter. On compose le moment, du concept à la dernière bouchée.",
     cTypes:
       '\n            <option value="" disabled selected>Choisir…</option>\n            <option>Cocktail dînatoire</option><option>Brand event</option><option>Art de la table</option><option>Congrès</option><option>Dîner assis</option><option>Autre</option>\n          ',
     coords:
