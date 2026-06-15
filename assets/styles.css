@@ -158,6 +158,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero-bg-label { position: absolute; right: clamp(20px,5vw,80px); bottom: clamp(20px,5vh,60px); font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: color-mix(in srgb, var(--fg) 34%, transparent); }
 .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(95deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 78%, transparent) 42%, color-mix(in srgb, var(--bg) 30%, transparent) 72%, transparent 100%); }
 .hero-inner { position: relative; z-index: 4; }
+:root:not([data-brand]) .hero::after { display: none; }
 .hero-loc { font-family: "Space Mono", monospace; font-size: .78rem; letter-spacing: .2em; color: var(--fg-dim); margin-bottom: 22px; }
 .hero-logo { font-size: clamp(3.2rem, 12vw, 11rem); line-height: .86; letter-spacing: -.035em; margin: 0; display: inline-flex; align-items: flex-start; }
 .hero-logo-dot { font-size: .12em; color: var(--accent); margin-left: .08em; line-height: 1.2; }
