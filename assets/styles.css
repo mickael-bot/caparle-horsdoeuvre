@@ -151,7 +151,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url(hero-bg-dna.png) no-repeat right center / auto 130%; }
 /* Vidéo de fond du hero (à la place de l'ADN chromé) */
 .hero-bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.hero-bg-veil { position: absolute; inset: 0; background: rgba(255, 255, 255, 0.5); }
+.hero-bg-veil { position: absolute; inset: 0; background: rgba(255, 255, 255, 0.25); }
 :root[data-brand="hors-doeuvre"] .hero-bg { background: linear-gradient(rgba(255,255,255,0.20), rgba(255,255,255,0.20)), url(hero-bg-hdo.jpg) no-repeat center center / cover; }
 .hero-bg-label { display: none; }
 :root[data-brand="hors-doeuvre"] .hero-bg-label { display: block; }
