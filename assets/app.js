@@ -415,7 +415,10 @@
     };
     document.addEventListener("click", (e) => {
       const member = e.target.closest(".member");
-      if (member && !modal.contains(e.target)) { open(member); return; }
+      if (member && !modal.contains(e.target)) {
+        if (!document.documentElement.getAttribute("data-brand")) return; // Ça Parle : pas de fiche
+        open(member); return;
+      }
       if (e.target.closest(".member-close") || e.target === modal) close();
     });
     document.addEventListener("keydown", (e) => {
