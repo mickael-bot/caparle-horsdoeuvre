@@ -755,3 +755,8 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 #equipe .sec-head { flex-direction: column; align-items: flex-start; gap: 18px; }
 #equipe .sec-head p { max-width: 64ch; line-height: 1.6; color: var(--fg-dim); }
 #equipe .sec-head p b { color: var(--fg); }
+
+/* Logos clients en image (noir) sur la bande chromée */
+.logos .logo { display: inline-flex; align-items: center; }
+.logos .logo img { height: clamp(26px, 3vw, 42px); width: auto; object-fit: contain; display: block; opacity: .9; transition: opacity .3s; }
+.logos .logo:hover img { opacity: 1; }
