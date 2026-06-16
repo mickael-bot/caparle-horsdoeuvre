@@ -813,7 +813,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .dk-intro p{max-width:58ch;font-size:clamp(.95rem,1.15vw,1.2rem);color:rgba(255,255,255,.88);line-height:1.52}
 .dk-intro p+p{margin-top:.82em}
 .dk-intro .dk-end{margin-top:24px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.15rem,2vw,1.8rem)}
-.dk-teaser{padding:clamp(70px,10vh,150px) 0 0;position:relative;overflow:hidden}
+.dk-teaser{padding:clamp(70px,10vh,150px) 0;position:relative;overflow:hidden}
 .dk-teaser>.wrap{position:relative;z-index:1;max-width:none;padding-left:clamp(20px,3vw,58px);padding-right:clamp(20px,3vw,58px)}
 .dk-chrome{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;z-index:0}
 .dk-chrome-l{object-position:left center}
