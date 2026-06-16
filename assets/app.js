@@ -130,6 +130,21 @@
   /* ---------------------------------------------------------
      NAV
   --------------------------------------------------------- */
+  /* ---------------------------------------------------------
+     L'AGENCE — scroll vers la présentation visible selon la marque
+     (Ça Parle = .dk-intro maquette ; Hors d'Œuvre = #agence manifeste)
+  --------------------------------------------------------- */
+  function initAgenceScroll() {
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[href="#agence"]');
+      if (!a) return;
+      e.preventDefault();
+      const brand = document.documentElement.getAttribute("data-brand");
+      const tgt = brand ? document.getElementById("agence") : document.querySelector(".dk-intro");
+      if (tgt) window.scrollTo({ top: tgt.getBoundingClientRect().top + window.scrollY - 70, behavior: "smooth" });
+    });
+  }
+
   function initNav() {
     const nav = document.querySelector(".nav");
     const links = document.querySelector(".nav-links");
@@ -640,5 +655,5 @@
   function safe(fn) { try { fn(); } catch (err) { console.error("[caparle]", fn.name, err); } }
 
   initLoader(); // toujours en premier : garantit que le loader disparaît
-  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initTeamModal, initServicesModal, initProjectsModal, initProjectModal, initLightbox].forEach(safe);
+  [mountMetals, initNav, initAgenceScroll, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initTeamModal, initServicesModal, initProjectsModal, initProjectModal, initLightbox].forEach(safe);
 })();
