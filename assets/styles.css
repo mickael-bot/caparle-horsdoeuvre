@@ -810,9 +810,9 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .dk-intro{background:var(--c-primary);color:#fff;padding:clamp(70px,9vh,120px) 0;min-height:90vh;display:flex;align-items:flex-end}
 .dk-intro .wrap{max-width:none;padding-left:clamp(16px,2.5vw,40px);padding-right:clamp(16px,2.5vw,40px)}
 .dk-intro .dk-xl{margin:26px 0 34px;max-width:18ch}
-.dk-intro p{max-width:56ch;font-size:clamp(.9rem,1vw,1.06rem);color:rgba(255,255,255,.88);line-height:1.45}
-.dk-intro p+p{margin-top:.62em}
-.dk-intro .dk-end{margin-top:22px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.05rem,1.7vw,1.5rem)}
+.dk-intro p{max-width:58ch;font-size:clamp(.95rem,1.15vw,1.2rem);color:rgba(255,255,255,.88);line-height:1.52}
+.dk-intro p+p{margin-top:.82em}
+.dk-intro .dk-end{margin-top:24px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.15rem,2vw,1.8rem)}
 .dk-teaser{padding:clamp(70px,10vh,150px) 0;border-bottom:1px solid var(--line)}
 .dk-blue{color:var(--c-primary)}
 .dk-sub{color:var(--fg-dim);max-width:34ch;margin-top:18px}
