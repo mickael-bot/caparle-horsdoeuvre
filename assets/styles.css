@@ -807,12 +807,12 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .dk-eyebrow{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;display:none !important}
 .dk-xl{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-.02em;line-height:.92;font-size:clamp(2.6rem,8vw,8rem)}
 .dk-lg{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-.02em;line-height:.94;font-size:clamp(2.2rem,5.5vw,5rem)}
-.dk-intro{background:var(--c-primary);color:#fff;padding:clamp(90px,12vh,170px) 0}
+.dk-intro{background:var(--c-primary);color:#fff;padding:clamp(70px,9vh,120px) 0;min-height:90vh;display:flex;align-items:flex-end}
 .dk-intro .wrap{max-width:none;padding-left:clamp(16px,2.5vw,40px);padding-right:clamp(16px,2.5vw,40px)}
 .dk-intro .dk-xl{margin:26px 0 34px;max-width:18ch}
-.dk-intro p{max-width:60ch;font-size:clamp(1rem,1.3vw,1.35rem);color:rgba(255,255,255,.86);line-height:1.6}
-.dk-intro p+p{margin-top:1.05em}
-.dk-intro .dk-end{margin-top:30px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.3rem,2.4vw,2.2rem)}
+.dk-intro p{max-width:56ch;font-size:clamp(.9rem,1vw,1.06rem);color:rgba(255,255,255,.88);line-height:1.45}
+.dk-intro p+p{margin-top:.62em}
+.dk-intro .dk-end{margin-top:22px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.05rem,1.7vw,1.5rem)}
 .dk-teaser{padding:clamp(70px,10vh,150px) 0;border-bottom:1px solid var(--line)}
 .dk-blue{color:var(--c-primary)}
 .dk-sub{color:var(--fg-dim);max-width:34ch;margin-top:18px}
@@ -821,6 +821,9 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .dk-mlist li span{font-family:"Space Mono",monospace;font-size:.8rem;color:var(--c-primary)}
 .dk-refs{padding:clamp(70px,10vh,150px) 0}
 .dk-refs h2{margin:22px 0 60px}
+.dk-refs-grid{display:grid;grid-template-columns:minmax(190px,.72fr) 2.4fr;gap:clamp(24px,3vw,54px);align-items:start}
+.dk-refs-grid h2{margin:0;font-size:clamp(1.9rem,3.6vw,3.4rem);line-height:.98}
+@media(max-width:900px){.dk-refs-grid{grid-template-columns:1fr}.dk-refs-grid h2{margin-bottom:30px}}
 .dk-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px)}
 .dk-card{padding:clamp(26px,2.4vw,40px);min-height:440px;display:flex;flex-direction:column;justify-content:space-between}
 .dk-card.b1{background:var(--c-primary);color:#fff}
@@ -840,9 +843,10 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .dk-metiers h2{color:#fff;margin:0 0 28px}
 .dk-metiers .dk-mlist li{border-top-color:rgba(255,255,255,.28);color:#fff}
 .dk-metiers .dk-mlist li span{color:#fff}
-.dk-trow{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(28px,4.5vw,70px);align-items:center}
+.dk-trow{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4.5vw,70px);align-items:center}
+.dk-trow>*{min-width:0}
 .dk-tleft .dk-sub{margin-top:22px}
-.dk-huge{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-.03em;line-height:.86;font-size:clamp(3.4rem,11vw,11rem);margin:0 0 6px}
+.dk-huge{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-.03em;line-height:.86;font-size:clamp(3rem,8vw,8.4rem);margin:0 0 6px}
 .dk-slideshow{position:relative;height:clamp(460px,64vh,780px);overflow:hidden;background:var(--bg-alt)}
 .dk-slideshow img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:dkslide 12s infinite}
 .dk-slideshow img:nth-child(1){animation-delay:0s}
