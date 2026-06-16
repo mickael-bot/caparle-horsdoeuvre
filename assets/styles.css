@@ -239,14 +239,14 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .clients {
   margin-top: clamp(60px, 8vh, 110px);
   width: 100vw; margin-left: calc(50% - 50vw);
-  padding: clamp(24px, 4vh, 50px) var(--gutter);
+  padding: clamp(24px, 4vh, 50px) 0;
   background:
     linear-gradient(177deg,
       #c2c7cf 0%, #eef0f3 9%, #aab0ba 22%, #f4f6f8 34%,
       #9aa1ac 47%, #fbfcfd 52%, #a6adb7 60%, #e9ebef 74%,
       #b4bac4 88%, #d8dce1 100%);
 }
-.clients .lbl { font-family:"Space Mono",monospace; font-size:.7rem; letter-spacing:.24em; text-transform:uppercase; color:var(--fg-dim); text-align:center; margin-bottom: 30px; }
+.clients .lbl { font-family:"Space Mono",monospace; font-size:.7rem; letter-spacing:.24em; text-transform:uppercase; color:var(--fg-dim); text-align:center; margin-bottom: 30px; padding-inline: var(--gutter); }
 .logos { display: flex; overflow: hidden; }
 .logos .track { display: inline-flex; align-items: center; gap: 0; animation: marq 32s linear infinite; flex: none; }
 .logos:hover .track { animation-play-state: paused; }
@@ -683,10 +683,13 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
    Bandeau clients défilant « Ils nous ont fait confiance »
    Fond bleu (Ça Parle) / orange (Hors d'Œuvre)
    ============================================================ */
-.logos { background: var(--accent); padding-block: clamp(8px, 1.4vh, 15px); padding-inline: clamp(20px, 3vw, 44px); border-radius: 100px; }
-.logos .logo { color: #fff; opacity: .85; }
-.logos .logo:hover { color: #fff; opacity: 1; }
-.logos .logo::after { content: "•"; display: inline-block; margin-inline: clamp(22px, 4vw, 52px); color: #fff; opacity: .55; font-weight: 400; }
+/* Pas de pastille bleue : les logos défilent directement sur la bande chromée, plein écran */
+.logos { background: transparent; padding: 0; border-radius: 0; }
+.logos .logo { color: #23262c; opacity: .82; }
+.logos .logo:hover { color: #0a0c0f; opacity: 1; }
+.logos .logo::after { content: "•"; display: inline-block; margin-inline: clamp(22px, 4vw, 52px); color: #23262c; opacity: .45; font-weight: 400; }
+/* Bande clients : Ça Parle uniquement */
+:root[data-brand="hors-doeuvre"] .clients { display: none; }
 
 /* ============================================================
    Logo Ça Parle : dans l'espace vide du manifeste + à la place du grand titre footer
@@ -747,3 +750,8 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 @media (max-width: 560px) {
   .svc-cols { grid-template-columns: 1fr; }
 }
+
+/* Intro équipe (texte long, Ça Parle) : empilée et lisible */
+#equipe .sec-head { flex-direction: column; align-items: flex-start; gap: 18px; }
+#equipe .sec-head p { max-width: 64ch; line-height: 1.6; color: var(--fg-dim); }
+#equipe .sec-head p b { color: var(--fg); }
