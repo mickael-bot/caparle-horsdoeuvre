@@ -467,6 +467,35 @@
   }
 
   /* ---------------------------------------------------------
+     SERVICES — modale (pleine largeur) ouverte au clic sur « Services ».
+     Côté Ça Parle : Nos métiers + Notre promesse. Côté Hors d'Œuvre :
+     contenu à venir. Le bon bloc s'affiche selon la marque (CSS).
+  --------------------------------------------------------- */
+  function initServicesModal() {
+    const modal = document.getElementById("services-modal");
+    if (!modal) return;
+    const open = () => {
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      modal.scrollTop = 0;
+    };
+    const close = () => {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+    document.addEventListener("click", (e) => {
+      const trigger = e.target.closest('a[href="#services"]');
+      if (trigger) { e.preventDefault(); open(); return; }
+      if (e.target.closest(".svc-close") || e.target === modal) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("open")) close();
+    });
+  }
+
+  /* ---------------------------------------------------------
      PROJET — modale ouverte au clic sur une carte projet
      (contenu à compléter plus tard). Marche pour les deux marques.
   --------------------------------------------------------- */
@@ -569,5 +598,5 @@
   function safe(fn) { try { fn(); } catch (err) { console.error("[caparle]", fn.name, err); } }
 
   initLoader(); // toujours en premier : garantit que le loader disparaît
-  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initTeamModal, initProjectModal, initLightbox].forEach(safe);
+  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initTeamModal, initServicesModal, initProjectModal, initLightbox].forEach(safe);
 })();
