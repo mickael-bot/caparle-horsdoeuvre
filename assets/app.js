@@ -438,6 +438,35 @@
   }
 
   /* ---------------------------------------------------------
+     ÉQUIPE — modale ouverte au clic sur le lien « Équipe » de la nav.
+     La section équipe ne figure plus dans le flux : elle vit dans cette
+     fenêtre. Le contenu reste piloté par data-k (Ça Parle / Hors d'Œuvre).
+  --------------------------------------------------------- */
+  function initTeamModal() {
+    const modal = document.getElementById("team-modal");
+    if (!modal) return;
+    const open = () => {
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      modal.scrollTop = 0;
+    };
+    const close = () => {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+    document.addEventListener("click", (e) => {
+      const trigger = e.target.closest('a[href="#equipe"]');
+      if (trigger) { e.preventDefault(); open(); return; }
+      if (e.target.closest(".team-close") || e.target === modal) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("open")) close();
+    });
+  }
+
+  /* ---------------------------------------------------------
      PROJET — modale ouverte au clic sur une carte projet
      (contenu à compléter plus tard). Marche pour les deux marques.
   --------------------------------------------------------- */
@@ -540,5 +569,5 @@
   function safe(fn) { try { fn(); } catch (err) { console.error("[caparle]", fn.name, err); } }
 
   initLoader(); // toujours en premier : garantit que le loader disparaît
-  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initProjectModal, initLightbox].forEach(safe);
+  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initTeamModal, initProjectModal, initLightbox].forEach(safe);
 })();
