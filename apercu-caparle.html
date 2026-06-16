@@ -71,6 +71,20 @@
 #contact .btn .arrow{color:var(--c-primary)}
 #contact .coords .social{color:#fff}
 #contact .coords .social svg{fill:#fff}
+
+/* Section 01 Réalisations : titre géant + slideshow auto */
+.dk-trow{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(28px,4.5vw,70px);align-items:center}
+.dk-tleft .dk-sub{margin-top:22px}
+.dk-huge{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-.03em;line-height:.88;font-size:clamp(3rem,8.6vw,8.6rem);margin:24px 0 4px}
+.dk-slideshow{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bg-alt)}
+.dk-slideshow img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:dkslide 15s infinite}
+.dk-slideshow img:nth-child(1){animation-delay:0s}
+.dk-slideshow img:nth-child(2){animation-delay:3s}
+.dk-slideshow img:nth-child(3){animation-delay:6s}
+.dk-slideshow img:nth-child(4){animation-delay:9s}
+.dk-slideshow img:nth-child(5){animation-delay:12s}
+@keyframes dkslide{0%{opacity:0}2%{opacity:1}18%{opacity:1}20%{opacity:0}100%{opacity:0}}
+@media(max-width:820px){.dk-trow{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -126,14 +140,20 @@
   <div class="dk-end">Il fait parler.</div>
 </div></section>
 
-<section class="dk-teaser"><div class="wrap"><div class="dk-row">
-  <div>
+<section class="dk-teaser"><div class="wrap"><div class="dk-trow">
+  <div class="dk-tleft">
     <span class="dk-eyebrow">01 — Réalisations</span>
-    <h2 class="dk-lg">Projets<br><span class="dk-blue">qui parlent.</span></h2>
+    <h2 class="dk-huge">Projets<br><span class="dk-blue">qui parlent.</span></h2>
     <p class="dk-sub">Des dispositifs sur-mesure : brand events, scénographies, soirées, activations. On part du terrain, on signe l'émotion.</p>
     <a href="#projets" class="dk-btn">Découvrir <span>&rarr;</span></a>
   </div>
-  <div class="dk-shot r43"><img src="assets/projet-plage.jpg" alt="Projet"></div>
+  <div class="dk-slideshow">
+    <img src="assets/projet-lancement.jpg" alt="">
+    <img src="assets/projet-plage.jpg" alt="">
+    <img src="assets/projet-laverie.jpg" alt="">
+    <img src="assets/event-cp-1.jpg" alt="">
+    <img src="assets/plage-cp-1.jpg" alt="">
+  </div>
 </div></div></section>
 
 <section class="dk-metiers"><div class="wrap">
@@ -295,6 +315,7 @@
   </div>
 </div>
 
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
   <button class="lightbox-close" type="button" aria-label="Fermer">×</button>
   <img class="lightbox-img" id="lightbox-img" src="" alt="" />
 </div>
