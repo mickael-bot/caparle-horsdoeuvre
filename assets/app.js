@@ -496,6 +496,48 @@
   }
 
   /* ---------------------------------------------------------
+     PROJETS — modale (pleine largeur) ouverte au clic sur « Projets ».
+     On clone le contenu de la section #projets (déjà à jour selon la
+     marque : « Projets qui parlent. » / « Des tables qui marquent. »)
+     dans la fenêtre. La section reste aussi dans le fil du site.
+  --------------------------------------------------------- */
+  function initProjectsModal() {
+    const modal = document.getElementById("projets-modal");
+    if (!modal) return;
+    const holder = modal.querySelector(".proj-modal-body");
+    const source = document.getElementById("projets");
+    const open = () => {
+      if (holder && source) {
+        const w = source.querySelector(".wrap");
+        holder.innerHTML = "";
+        if (w) {
+          const clone = w.cloneNode(true);
+          clone.classList.add("in");
+          clone.querySelectorAll(".reveal,[data-stagger]").forEach((r) => r.classList.add("in"));
+          holder.appendChild(clone);
+        }
+      }
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      modal.scrollTop = 0;
+    };
+    const close = () => {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+    document.addEventListener("click", (e) => {
+      const trigger = e.target.closest('a[href="#projets"]');
+      if (trigger) { e.preventDefault(); open(); return; }
+      if (e.target.closest(".proj-close") || e.target === modal) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("open")) close();
+    });
+  }
+
+  /* ---------------------------------------------------------
      PROJET — modale ouverte au clic sur une carte projet
      (contenu à compléter plus tard). Marche pour les deux marques.
   --------------------------------------------------------- */
@@ -598,5 +640,5 @@
   function safe(fn) { try { fn(); } catch (err) { console.error("[caparle]", fn.name, err); } }
 
   initLoader(); // toujours en premier : garantit que le loader disparaît
-  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initTeamModal, initServicesModal, initProjectModal, initLightbox].forEach(safe);
+  [mountMetals, initNav, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initTeamModal, initServicesModal, initProjectsModal, initProjectModal, initLightbox].forEach(safe);
 })();

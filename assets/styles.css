@@ -775,12 +775,13 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 /* La promesse quitte le fil côté Ça Parle (elle vit dans la fenêtre Services). HDO garde ses piliers dans le fil. */
 :root:not([data-brand]) #piliers { display: none; }
 
-.svc-modal { position: fixed; inset: 0; z-index: 9000; display: none; overflow-y: auto; -webkit-overflow-scrolling: touch; background: rgba(12,14,18,.62); backdrop-filter: blur(8px); padding: clamp(18px,4vh,56px) clamp(10px,2.5vw,36px); }
-.svc-modal.open { display: block; }
-.svc-modal-inner { position: relative; width: 100%; max-width: var(--maxw); margin: 0 auto; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding-block: clamp(30px,4vw,60px); box-shadow: 0 40px 120px -30px rgba(0,0,0,.55); }
-.svc-close { position: fixed; top: clamp(14px,2vw,26px); right: clamp(14px,2.4vw,30px); z-index: 9001; width: 46px; height: 46px; border-radius: 50%; background: var(--bg); border: 1px solid var(--line); font-size: 1.7rem; line-height: 1; color: var(--fg); display: grid; place-items: center; transition: transform .25s var(--ease), background .25s, color .25s; }
-.svc-close:hover { transform: scale(1.08) rotate(90deg); background: var(--accent); color: #fff; border-color: var(--accent); }
-.svc-modal .reveal { opacity: 1 !important; transform: none !important; }
+.svc-modal, .proj-modal { position: fixed; inset: 0; z-index: 9000; display: none; overflow-y: auto; -webkit-overflow-scrolling: touch; background: rgba(12,14,18,.62); backdrop-filter: blur(8px); padding: clamp(18px,5vh,60px) 0 0 0; }
+.svc-modal.open, .proj-modal.open { display: block; }
+/* Pleine largeur : la fenêtre remplit l'écran de gauche à droite (et jusqu'en bas), on garde juste l'espace en haut */
+.svc-modal-inner, .proj-modal-inner { position: relative; width: 100%; max-width: none; margin: 0; min-height: calc(100dvh - clamp(18px,5vh,60px)); background: var(--bg); border: none; border-radius: 18px 18px 0 0; padding-block: clamp(30px,4vw,60px); box-shadow: 0 -8px 50px -16px rgba(0,0,0,.4); }
+.svc-close, .proj-close { position: fixed; top: clamp(14px,2vw,26px); right: clamp(14px,2.4vw,30px); z-index: 9001; width: 46px; height: 46px; border-radius: 50%; background: var(--bg); border: 1px solid var(--line); font-size: 1.7rem; line-height: 1; color: var(--fg); display: grid; place-items: center; transition: transform .25s var(--ease), background .25s, color .25s; }
+.svc-close:hover, .proj-close:hover { transform: scale(1.08) rotate(90deg); background: var(--accent); color: #fff; border-color: var(--accent); }
+.svc-modal .reveal, .proj-modal .reveal, .proj-modal .in { opacity: 1 !important; transform: none !important; }
 
 /* Affichage du bon bloc selon la marque */
 :root[data-brand="hors-doeuvre"] .svc-cp { display: none; }
@@ -793,3 +794,6 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 
 /* Placeholder Hors d'Œuvre */
 .svc-hdo .svc-todo { margin-top: 30px; font-family: var(--font-display); font-weight: 700; font-size: clamp(1.4rem,3vw,2.2rem); color: var(--fg-dim); letter-spacing: -.02em; }
+
+/* Fenêtre Projets : contenu cloné de la section, pleine largeur */
+.proj-modal-inner .wrap { padding-top: 6px; }
