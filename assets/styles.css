@@ -858,7 +858,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .dk-trow{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4.5vw,70px);align-items:center}
 .dk-trow>*{min-width:0}
 .dk-tleft .dk-sub{margin-top:22px}
-.dk-tleft{padding-left:clamp(14px,5.5vw,110px)}
+.dk-tleft{padding-left:clamp(18px,6.5vw,130px)}
 .dk-huge{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-.03em;line-height:.86;font-size:clamp(3rem,8vw,8.4rem);margin:0 0 6px}
 .dk-slideshow{position:relative;height:clamp(460px,64vh,780px);overflow:hidden;background:var(--bg-alt)}
 .dk-slideshow img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:dkslide 12s infinite}
@@ -888,7 +888,15 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 :root:not([data-brand]) #projets,
 :root:not([data-brand]) .section.testi{display:none}
 /* Côté Ça Parle : section contact en bleu + espace réduit */
-:root:not([data-brand]) #contact{background:var(--c-primary);padding-bottom:clamp(26px,3.5vh,46px)}
+:root:not([data-brand]) #contact{background:transparent;padding-bottom:clamp(26px,3.5vh,46px)}
+/* Bas de page : bleu + forme chromée (Ça Parle uniquement) */
+.cp-bottom{position:relative;overflow:hidden}
+:root:not([data-brand]) .cp-bottom{background:var(--c-primary)}
+.cp-chrome{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;z-index:1}
+:root[data-brand="hors-doeuvre"] .cp-chrome{display:none}
+:root:not([data-brand]) .cp-bottom #contact,
+:root:not([data-brand]) .cp-bottom .footer{background:transparent;position:relative;z-index:2}
+
 :root:not([data-brand]) #contact .eyebrow{display:none}
 :root:not([data-brand]) #contact h2,
 :root:not([data-brand]) #contact .intro,
