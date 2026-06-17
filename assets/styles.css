@@ -121,8 +121,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 :root[data-brand="hors-doeuvre"] .ms-dot { transform: translateX(12px); }
 .nav-links { display: flex; align-items: center; gap: clamp(14px, 2vw, 34px); }
 .nav-links a { font-size: .82rem; letter-spacing: .01em; color: var(--fg-dim); transition: color .25s; position: relative; }
-.nav-links a::after { content:""; position:absolute; left:0; bottom:-4px; width:0; height:1px; background: var(--accent); transition: width .3s var(--ease); }
-.nav-links a:hover { color: var(--fg); } .nav-links a:hover::after { width: 100%; }
+/* Liens nav en pastilles : majuscules, blanc, contour blanc (comme le bouton « Voir les projets ») */
+.nav-links a:not(.btn) { text-transform: uppercase; font-size: .7rem; letter-spacing: .09em; color: #fff; border: 1px solid rgba(255,255,255,.55); border-radius: 100px; padding: 8px 16px; transition: background .25s, color .25s, border-color .25s; }
+.nav-links a:not(.btn):hover { background: rgba(255,255,255,.16); border-color: #fff; color: #fff; }
+/* Nav devenue claire au scroll : on repasse en foncé pour rester lisible */
+.nav.scrolled .nav-links a:not(.btn) { color: var(--fg); border-color: var(--line); }
+.nav.scrolled .nav-links a:not(.btn):hover { background: var(--c-primary); border-color: var(--c-primary); color: #fff; }
 
 .btn {
   --btn-bg: var(--c-primary); --btn-fg: #fff;
@@ -854,6 +858,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .dk-trow{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4.5vw,70px);align-items:center}
 .dk-trow>*{min-width:0}
 .dk-tleft .dk-sub{margin-top:22px}
+.dk-tleft{padding-left:clamp(8px,3.5vw,64px)}
 .dk-huge{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-.03em;line-height:.86;font-size:clamp(3rem,8vw,8.4rem);margin:0 0 6px}
 .dk-slideshow{position:relative;height:clamp(460px,64vh,780px);overflow:hidden;background:var(--bg-alt)}
 .dk-slideshow img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:dkslide 12s infinite}
