@@ -231,6 +231,9 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .proj.c5 { grid-column: span 5; }
 .proj.c7 { grid-column: span 7; }
 .proj.c4 { grid-column: span 4; }
+.proj.cside { grid-column: span 2; }
+.proj.cmid { grid-column: span 8; aspect-ratio: 21/9; }
+.proj.chalf { grid-column: span 4; aspect-ratio: 4/3; }
 .proj .media { position: absolute; inset: 0; overflow: hidden; }
 .proj .media > * { width: 100%; display: block; transition: transform .9s var(--ease), filter .6s; }
 .proj:hover .media > * { transform: scale(1.06); }
@@ -452,7 +455,8 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
   .sticky-cta { display: block; }
 }
 @media (max-width: 760px) {
-  .proj.feat, .proj.c6, .proj.c5, .proj.c7, .proj.c4 { grid-column: span 12; }
+  .proj.feat, .proj.c6, .proj.c5, .proj.c7, .proj.c4, .proj.cmid, .proj.chalf { grid-column: span 12; }
+  .proj.cside { display: none; }
   .proj { aspect-ratio: 4/3; }
   .proj.feat { aspect-ratio: 16/10; }
   .pillars { grid-template-columns: 1fr; }
