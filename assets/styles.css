@@ -833,6 +833,8 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .dk-chrome-r{object-position:right bottom}
 .dk-blue{color:var(--c-primary)}
 .dk-sub{color:var(--fg-dim);max-width:34ch;margin-top:18px}
+/* Cote Ca Parle : pas de bulle "tag" sur les photos projets, seulement le gros titre blanc */
+:root:not([data-brand]) .proj .tag{display:none}
 .dk-mlist{list-style:none}
 .dk-mlist li{display:flex;gap:16px;align-items:baseline;padding:16px 0;border-top:1px solid var(--line);font-family:var(--font-display);font-weight:500;font-size:clamp(1.1rem,1.6vw,1.5rem)}
 .dk-mlist li span{font-family:"Space Mono",monospace;font-size:.8rem;color:var(--c-primary)}
