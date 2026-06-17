@@ -106,7 +106,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 18px var(--gutter);
   transition: background .4s var(--ease), padding .4s var(--ease), backdrop-filter .4s;
 }
-.nav.scrolled { background: color-mix(in srgb, var(--bg) 72%, transparent); backdrop-filter: blur(18px) saturate(1.4); padding-block: 12px; border-bottom: 1px solid var(--line); }
+.nav.scrolled { background: transparent; padding-block: 12px; }
 .nav-logo { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; display: flex; align-items: center; gap: 4px; }
 .nav-brand { display: flex; flex-direction: column; gap: 5px; align-items: flex-start; }
 .bt-hint { text-align: center; font-family: "Space Mono", monospace; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; display: flex; align-items: center; justify-content: center; gap: 10px; }
@@ -124,9 +124,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Liens nav en pastilles : majuscules, blanc, contour blanc (comme le bouton « Voir les projets ») */
 .nav-links a:not(.btn) { text-transform: uppercase; font-size: .7rem; font-weight: 600; letter-spacing: .09em; color: #fff; border: 1px solid rgba(255,255,255,.55); border-radius: 100px; padding: 8px 16px; transition: background .25s, color .25s, border-color .25s; }
 .nav-links a:not(.btn):hover { background: rgba(255,255,255,.16); border-color: #fff; color: #fff; }
-/* Nav devenue claire au scroll : on repasse en foncé pour rester lisible */
-.nav.scrolled .nav-links a:not(.btn) { color: var(--fg); border-color: var(--line); }
-.nav.scrolled .nav-links a:not(.btn):hover { background: var(--c-primary); border-color: var(--c-primary); color: #fff; }
+/* Nav transparente au scroll : les liens restent blancs (site majoritairement foncé/bleu) */
 
 .btn {
   --btn-bg: var(--c-primary); --btn-fg: #fff;
