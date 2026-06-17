@@ -111,14 +111,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .nav-brand { display: flex; flex-direction: column; gap: 5px; align-items: flex-start; }
 .bt-hint { text-align: center; font-family: "Space Mono", monospace; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; display: flex; align-items: center; justify-content: center; gap: 10px; }
 .bt-arrow { font-size: 1.1em; }
-.mini-switch { display: inline-flex; align-items: center; gap: 7px; font-family: "Space Mono", monospace; font-size: .54rem; letter-spacing: .05em; text-transform: uppercase; color: var(--fg-dim); user-select: none; }
+.mini-switch { display: inline-flex; align-items: center; gap: 12px; font-family: "Space Mono", monospace; font-size: .54rem; letter-spacing: .05em; text-transform: uppercase; color: var(--fg-dim); user-select: none; }
 .mini-switch .ms-name { cursor: pointer; transition: color .25s; white-space: nowrap; }
 .mini-switch .ms-name.on { color: var(--fg); }
-.ms-name .ms-logo { height: 26px; width: auto; display: block; opacity: .42; transition: opacity .25s; }
+.ms-name .ms-logo { height: 48px; width: auto; display: block; opacity: .42; transition: opacity .25s; }
 .ms-name.on .ms-logo { opacity: 1; }
-.ms-track { position: relative; width: 26px; height: 14px; border-radius: 100px; background: var(--bg-grey); border: 1px solid var(--line); flex: none; cursor: pointer; padding: 0; }
-.ms-dot { position: absolute; top: 1.5px; left: 1.5px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); transition: transform .35s var(--ease); }
-:root[data-brand="hors-doeuvre"] .ms-dot { transform: translateX(12px); }
+.ms-track { position: relative; width: 48px; height: 26px; border-radius: 100px; background: var(--bg-grey); border: 1px solid var(--line); flex: none; cursor: pointer; padding: 0; }
+.ms-dot { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); transition: transform .35s var(--ease); }
+:root[data-brand="hors-doeuvre"] .ms-dot { transform: translateX(22px); }
 .nav-links { display: flex; align-items: center; gap: clamp(7px, 0.9vw, 15px); }
 .nav-links a { font-size: .82rem; letter-spacing: .01em; color: var(--fg-dim); transition: color .25s; position: relative; }
 /* Liens nav en pastilles : majuscules, blanc, contour blanc (comme le bouton « Voir les projets ») */
