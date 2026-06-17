@@ -308,7 +308,8 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .member { background: var(--bg-soft); padding: clamp(24px,3vw,46px); display: grid; grid-template-columns: 130px 1fr; gap: clamp(20px,2.5vw,38px); align-items: center; transition: background .4s var(--ease); position: relative; }
 .member:hover { background: var(--bg-grey); }
 .member .avatar { aspect-ratio: 1; border-radius: 50%; overflow: hidden; position: relative; }
-.member .avatar .ph { width: 100%; height: 100%; transition: transform .6s var(--ease), filter .6s; filter: grayscale(1) contrast(1.05); }
+.member .avatar .ph { position: absolute; inset: 0; width: 100%; height: 100%; transition: transform .6s var(--ease), filter .6s; filter: grayscale(1) contrast(1.05); }
+.member .avatar .ph > img { position: absolute; inset: 0; }
 .member:hover .avatar .ph { transform: scale(1.08); filter: grayscale(0); }
 .member .n { font-family:"Space Mono",monospace; font-size:.7rem; color: var(--accent); letter-spacing:.12em; }
 .member h4 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.3rem,2vw,1.9rem); letter-spacing: -.02em; margin: 8px 0 4px; }
