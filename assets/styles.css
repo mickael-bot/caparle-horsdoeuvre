@@ -221,6 +221,9 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .proj-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(14px, 1.6vw, 26px); }
 .proj { position: relative; border-radius: var(--brand-radius); overflow: hidden; background: var(--bg-soft); }
 .proj.c7 { aspect-ratio: 4/3; }
+.proj.proj-empty { display: flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--c-ink) 4%, var(--bg)); border: 2px dashed color-mix(in srgb, var(--c-ink) 20%, transparent); box-shadow: none; }
+.proj.proj-empty .pe-plus { font-family: var(--font-display); font-weight: 300; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1; color: color-mix(in srgb, var(--c-ink) 26%, transparent); }
+.proj.proj-empty:hover { border-color: color-mix(in srgb, var(--c-ink) 34%, transparent); }
 .proj .ph { width: 100%; height: 100%; }
 .proj.feat { grid-column: span 12; }
 .proj.feat { aspect-ratio: 21/9; }
