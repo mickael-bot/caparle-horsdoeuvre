@@ -809,7 +809,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .svc-hdo .svc-todo { margin-top: 30px; font-family: var(--font-display); font-weight: 700; font-size: clamp(1.4rem,3vw,2.2rem); color: var(--fg-dim); letter-spacing: -.02em; }
 
 /* Fenêtre Projets : contenu cloné de la section, pleine largeur */
-.proj-modal-inner .wrap { padding-top: 6px; }
+.proj-modal-inner .wrap { padding-top: 6px; max-width: none; }
 
 
 /* ============================================================
