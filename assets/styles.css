@@ -830,9 +830,14 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .dk-mlist li{display:flex;gap:16px;align-items:baseline;padding:16px 0;border-top:1px solid var(--line);font-family:var(--font-display);font-weight:500;font-size:clamp(1.1rem,1.6vw,1.5rem)}
 .dk-mlist li span{font-family:"Space Mono",monospace;font-size:.8rem;color:var(--c-primary)}
 .dk-refs{padding:clamp(70px,10vh,150px) 0 0;position:relative;overflow:hidden}
-.dk-refs>.wrap{position:relative;z-index:1;max-width:none;padding-left:clamp(16px,2.2vw,44px);padding-right:clamp(16px,2.2vw,44px)}
+.dk-refs>.wrap{position:relative;z-index:1}
 .dk-adn{position:absolute;top:-6%;right:-16%;height:118%;width:auto;max-width:none;z-index:0;pointer-events:none}
 .dk-refs h2{margin:22px 0 60px}
+/* Titre Confiance ancré à gauche (indépendant des cases) */
+.dk-refs-title{position:absolute;left:clamp(16px,3vw,60px);top:50%;transform:translateY(-50%);z-index:2;margin:0;font-family:var(--font-display);font-weight:700;text-transform:uppercase;font-size:clamp(2.4rem,4.6vw,4.7rem);line-height:.95;letter-spacing:-.02em;max-width:7ch;color:var(--fg)}
+.dk-cards-right{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.5vw,24px);max-width:760px;margin-left:clamp(260px,30vw,460px);margin-right:auto}
+@media(max-width:900px){.dk-refs-title{position:static;transform:none;margin-bottom:30px}.dk-cards-right{margin-left:0;grid-template-columns:1fr}}
+
 .dk-refs-grid{display:grid;grid-template-columns:minmax(170px,.7fr) 1.75fr;gap:clamp(30px,4vw,60px);align-items:center;max-width:1140px}
 .dk-refs-grid h2{margin:0;font-size:clamp(2.4rem,4.6vw,4.7rem);line-height:.95;letter-spacing:-.02em}
 .dk-refs .dk-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.5vw,24px)}
