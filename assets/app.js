@@ -673,10 +673,27 @@
   }
 
   /* ---------------------------------------------------------
+     BULLES AU TAP (mobile) — métiers (page) et sous-services (fenêtre)
+     Sur tactile, le survol ne marche pas : un tap ouvre/ferme la bulle
+     sous l'élément. (En desktop le survol reste géré par le CSS.)
+  --------------------------------------------------------- */
+  function initTapBubbles() {
+    document.addEventListener("click", (e) => {
+      if (e.target.closest("a, .dk-mbubble, .svc-bub")) return;
+      const li = e.target.closest(".dk-mlist li, .svc-imgtxt li");
+      if (!li) return;
+      const wasOpen = li.classList.contains("open");
+      const list = li.parentElement;
+      if (list) list.querySelectorAll("li.open").forEach((o) => o.classList.remove("open"));
+      if (!wasOpen) li.classList.add("open");
+    });
+  }
+
+  /* ---------------------------------------------------------
      BOOT — chaque init est isolé : un échec ne bloque pas le reste
   --------------------------------------------------------- */
   function safe(fn) { try { fn(); } catch (err) { console.error("[caparle]", fn.name, err); } }
 
   initLoader(); // toujours en premier : garantit que le loader disparaît
-  [mountMetals, initNav, initNavTheme, initAgenceScroll, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initTeamModal, initServicesModal, initProjectsModal, initProjectModal, initLightbox].forEach(safe);
+  [mountMetals, initNav, initNavTheme, initAgenceScroll, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initTeamModal, initServicesModal, initProjectsModal, initProjectModal, initLightbox, initTapBubbles].forEach(safe);
 })();
