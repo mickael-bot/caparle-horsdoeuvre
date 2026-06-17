@@ -217,6 +217,9 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .sec-head h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 6.5vw, 6rem); letter-spacing: -.03em; line-height: .95; }
 .sec-head h2.blue { color: var(--c-primary); }
 .sec-head p { color: var(--fg-dim); max-width: 36ch; }
+/* Fenetre Services : intro sous le titre, pleine largeur (pas une colonne etroite) */
+.svc-cp .sec-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+.svc-cp .sec-head p { max-width: none; font-size: clamp(1rem, 1.35vw, 1.35rem); line-height: 1.55; }
 
 .proj-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(14px, 1.6vw, 26px); }
 .proj { position: relative; border-radius: var(--brand-radius); overflow: hidden; background: var(--bg-soft); }
