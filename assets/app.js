@@ -145,6 +145,26 @@
     });
   }
 
+  /* ---------------------------------------------------------
+     NAV THEME — liens foncés quand la nav survole une section claire
+  --------------------------------------------------------- */
+  function initNavTheme() {
+    const nav = document.querySelector(".nav");
+    if (!nav) return;
+    const lights = [...document.querySelectorAll(".nav-light")];
+    const update = () => {
+      const y = 56;
+      const on = lights.some((el) => {
+        const r = el.getBoundingClientRect();
+        return r.top <= y && r.bottom >= y && r.height > 0;
+      });
+      nav.classList.toggle("on-light", on);
+    };
+    addEventListener("scroll", update, { passive: true });
+    addEventListener("resize", update);
+    update();
+  }
+
   function initNav() {
     const nav = document.querySelector(".nav");
     const links = document.querySelector(".nav-links");
@@ -658,5 +678,5 @@
   function safe(fn) { try { fn(); } catch (err) { console.error("[caparle]", fn.name, err); } }
 
   initLoader(); // toujours en premier : garantit que le loader disparaît
-  [mountMetals, initNav, initAgenceScroll, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initTeamModal, initServicesModal, initProjectsModal, initProjectModal, initLightbox].forEach(safe);
+  [mountMetals, initNav, initNavTheme, initAgenceScroll, initCursor, initReveal, initParallax, initMarquee, initForm, initBrand, initGallery, initMemberModal, initBriefModal, initTeamModal, initServicesModal, initProjectsModal, initProjectModal, initLightbox].forEach(safe);
 })();

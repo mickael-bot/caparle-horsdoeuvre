@@ -124,7 +124,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Liens nav en pastilles : majuscules, blanc, contour blanc (comme le bouton « Voir les projets ») */
 .nav-links a:not(.btn) { text-transform: uppercase; font-size: .7rem; font-weight: 600; letter-spacing: .09em; color: #fff; border: 1px solid rgba(255,255,255,.55); border-radius: 100px; padding: 8px 16px; transition: background .25s, color .25s, border-color .25s; }
 .nav-links a:not(.btn):hover { background: rgba(255,255,255,.16); border-color: #fff; color: #fff; }
-/* Nav transparente au scroll : les liens restent blancs (site majoritairement foncé/bleu) */
+/* Nav transparente au scroll : liens blancs par défaut, foncés au-dessus d'une section claire */
+.nav.on-light .nav-links a:not(.btn){color:var(--fg);border-color:rgba(6,22,48,.28)}
+.nav.on-light .nav-links a:not(.btn):hover{background:var(--c-primary);border-color:var(--c-primary);color:#fff}
 
 .btn {
   --btn-bg: var(--c-primary); --btn-fg: #fff;
