@@ -793,7 +793,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .team-modal .sec-head p b { color: var(--fg); }
 
 /* ===================== ÉQUIPE EN MODALE ===================== */
-.team-modal { position: fixed; inset: 0; z-index: 9000; display: none; overflow-y: auto; -webkit-overflow-scrolling: touch; background: rgba(12,14,18,.62); backdrop-filter: blur(8px); padding: clamp(20px,5vh,70px) clamp(12px,4vw,50px); }
+.team-modal { position: fixed; inset: 0; z-index: 9000; display: none; overflow-y: auto; -webkit-overflow-scrolling: touch; background: rgba(12,14,18,.72); padding: clamp(20px,5vh,70px) clamp(12px,4vw,50px); }
 .team-modal.open { display: block; }
 .team-modal-inner { position: relative; max-width: 1120px; margin: 0 auto; background: var(--bg-alt); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; padding-block: clamp(30px,4vw,60px); box-shadow: 0 40px 120px -30px rgba(0,0,0,.55); }
 .team-modal-inner .sec-head { margin-bottom: clamp(30px,4vw,50px); }
@@ -811,7 +811,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 /* La promesse quitte le fil côté Ça Parle (elle vit dans la fenêtre Services). HDO garde ses piliers dans le fil. */
 :root:not([data-brand]) #piliers { display: none; }
 
-.svc-modal, .proj-modal { position: fixed; inset: 0; z-index: 9000; display: none; overflow-y: auto; -webkit-overflow-scrolling: touch; background: rgba(12,14,18,.62); backdrop-filter: blur(8px); padding: clamp(18px,5vh,60px) 0 0 0; }
+.svc-modal, .proj-modal { position: fixed; inset: 0; z-index: 9000; display: none; overflow-y: auto; -webkit-overflow-scrolling: touch; background: rgba(12,14,18,.72); padding: clamp(18px,5vh,60px) 0 0 0; }
 .svc-modal.open, .proj-modal.open { display: block; }
 /* Pleine largeur : la fenêtre remplit l'écran de gauche à droite (et jusqu'en bas), on garde juste l'espace en haut */
 .svc-modal-inner, .proj-modal-inner { position: relative; width: 100%; max-width: none; margin: 0; min-height: calc(100dvh - clamp(18px,5vh,60px)); background: var(--bg); border: none; border-radius: 18px 18px 0 0; padding-block: clamp(30px,4vw,60px); box-shadow: 0 -8px 50px -16px rgba(0,0,0,.4); }
@@ -874,9 +874,17 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .dk-mbubble b{display:block;font-family:var(--font-display);font-weight:700;text-transform:uppercase;font-size:.74rem;letter-spacing:.06em;color:var(--c-primary);margin-bottom:6px}
 .dk-metiers .dk-mbubble .dk-mq{display:block;font-family:var(--font-display);font-weight:600;font-size:1.02rem;line-height:1.3;color:var(--c-ink);margin-bottom:10px}
 .dk-mbubble::before{content:"";position:absolute;left:-9px;top:50%;transform:translateY(-50%);border:9px solid transparent;border-right-color:#fff;border-left:0}
-.dk-mlist li:hover .dk-mbubble{opacity:1;visibility:visible;transform:translate(0,-50%)}
+.dk-mlist li:hover .dk-mbubble{opacity:1;visibility:visible;pointer-events:auto;transform:translate(0,-50%)}
 .dk-mlist:hover li:not(:hover){opacity:.5}
-@media(max-width:900px){.dk-mbubble{display:none}}
+/* MOBILE : la bulle s'ouvre centree au-dessus de l'item, au TAP (.open), pas au survol */
+@media (max-width: 900px){
+  .dk-mlist li{ cursor: pointer; }
+  .dk-mlist li:hover .dk-mbubble{ opacity: 0; visibility: hidden; pointer-events: none; }
+  .dk-mlist:hover li:not(:hover){ opacity: 1; }
+  .dk-mbubble{ left: 50%; right: auto; top: auto; bottom: calc(100% + 14px); transform: translate(-50%, 6px); width: min(360px, 86vw); max-width: none; }
+  .dk-mbubble::before{ left: 50%; right: auto; top: 100%; transform: translateX(-50%); border: 9px solid transparent; border-top-color: #fff; border-bottom: 0; border-right-color: transparent; }
+  .dk-mlist li.open .dk-mbubble{ opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); }
+}
 .dk-refs{padding:clamp(70px,10vh,150px) 0 0;position:relative;overflow:hidden}
 .dk-refs>.wrap{position:relative;z-index:1}
 .dk-adn{position:absolute;top:-6%;right:-16%;height:118%;width:auto;max-width:none;z-index:0;pointer-events:none}
@@ -1004,24 +1012,25 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
   .dk-teaser .dk-chrome{ display: none; }
   .dk-slideshow{ transform: none; }
 }
-/* 6) Bas de page : Briefez-nous + paragraphe centres, coordonnees sur une ligne */
+/* 6) Bas de page (TELEPHONE) : chrome masque, titre+paragraphe centres,
+   coords sans "Reseaux" + centrees + lisibles, footer = Mentions a gauche / reseaux a droite */
 @media (max-width: 600px){
+  .cp-chrome{ display: none; }
   :root:not([data-brand]) #contact .wrap{ text-align: center; padding-left: clamp(16px,4vw,30px); padding-right: clamp(16px,4vw,30px); }
   :root:not([data-brand]) #contact .intro{ margin-left: auto; margin-right: auto; }
-  .coords{ grid-template-columns: repeat(4, 1fr); gap: 7px; margin-top: clamp(30px,5vh,50px); padding-top: 24px; text-align: left; }
+  .coords{ grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: clamp(30px,5vh,50px); padding-top: 24px; text-align: center; }
+  .coords .col-reseaux{ display: none; }
   .coords .col{ min-width: 0; }
-  .coords .col .k{ font-size: .5rem; letter-spacing: .06em; margin-bottom: 5px; }
-  .coords .col a, .coords .col p{ font-size: .64rem; line-height: 1.3; overflow-wrap: anywhere; }
-  .coords .social{ display: flex; gap: 6px; }
-  .coords .social a img, .coords .social svg{ width: 15px; height: 15px; }
+  :root:not([data-brand]) #contact .coords{ border-top-color: rgba(255,255,255,.22); }
+  .coords .col .k{ font-size: .56rem; letter-spacing: .08em; margin-bottom: 6px; }
+  :root:not([data-brand]) #contact .coords .col .k{ color: rgba(255,255,255,.72); }
+  :root:not([data-brand]) #contact .coords .col a, :root:not([data-brand]) #contact .coords .col p{ color: #fff; font-weight: 500; font-size: .82rem; line-height: 1.35; overflow-wrap: anywhere; }
+  /* footer : ne garder que Mentions legales (gauche) + reseaux (droite) */
+  .footer-links .f-brief, .footer-links .f-presse, .footer-sister{ display: none; }
+  .footer-bottom{ flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; }
+  .footer-links{ flex: 1; display: flex; justify-content: space-between; align-items: center; }
 }
-/* 4) + 5) Bulles au TAP : metiers (page) et sous-services (fenetre Services) */
-@media (max-width: 900px){
-  .dk-mlist li{ flex-wrap: wrap; cursor: pointer; }
-  .dk-mbubble{ display: none; position: static; left: auto; top: auto; transform: none; flex-basis: 100%; width: 100%; max-width: none; margin-top: 12px; opacity: 1; visibility: visible; pointer-events: auto; box-shadow: 0 14px 40px -18px rgba(0,0,0,.4); }
-  .dk-mbubble::before{ display: none; }
-  .dk-mlist li.open .dk-mbubble{ display: block; }
-}
+/* 5) Sous-services (fenetre Services) : bulle au tap, en dessous */
 @media (max-width: 768px){
   .svc-imgtxt ul{ grid-template-columns: 1fr; }
   .svc-imgtxt li{ cursor: pointer; }
