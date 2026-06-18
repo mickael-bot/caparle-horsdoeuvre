@@ -114,7 +114,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .mini-switch { display: inline-flex; align-items: center; gap: 12px; font-family: "Space Mono", monospace; font-size: .54rem; letter-spacing: .05em; text-transform: uppercase; color: var(--fg-dim); user-select: none; }
 .mini-switch .ms-name { cursor: pointer; transition: color .25s; white-space: nowrap; }
 .mini-switch .ms-name.on { color: var(--fg); }
-.ms-name .ms-logo { height: 48px; width: auto; display: block; opacity: .42; transition: opacity .25s; }
+.ms-name .ms-logo { height: 48px; width: auto; display: block; opacity: .42; transition: opacity .25s; filter: drop-shadow(0 0 1px rgba(255,255,255,.95)) drop-shadow(0 0 1px rgba(255,255,255,.95)) drop-shadow(0 0 2px rgba(255,255,255,.7)); }
 .ms-name.on .ms-logo { opacity: 1; }
 .ms-track { position: relative; width: 48px; height: 26px; border-radius: 100px; background: var(--bg-grey); border: 1px solid var(--line); flex: none; cursor: pointer; padding: 0; }
 .ms-dot { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); transition: transform .35s var(--ease); }
@@ -151,7 +151,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .btn:hover .arrow { transform: translateX(4px); }
 
 .burger { display: none; flex-direction: column; gap: 5px; width: 30px; padding: 6px 0; }
-.burger span { height: 1.5px; background: var(--fg); transition: transform .3s, opacity .3s; }
+.burger span { height: 1.5px; background: var(--fg); transition: transform .3s, opacity .3s, background .3s; }
+/* burger blanc tant que la nav n'est pas au-dessus d'une section claire */
+.nav:not(.on-light) .burger span { background: #fff; }
 
 /* ============================================================
    HERO
@@ -245,7 +247,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .svc-bub b { display: block; font-family: var(--font-display); font-weight: 700; font-size: 1.14rem; line-height: 1.25; color: var(--c-ink); margin-bottom: 9px; }
 .svc-bub::after { content: ""; position: absolute; left: 50%; top: 100%; transform: translateX(-50%); border: 8px solid transparent; border-top-color: #fff; border-bottom: 0; }
 .svc-imgtxt li:hover .svc-bub { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
-@media (max-width: 680px) { .svc-imgrow { grid-template-columns: 1fr; } .svc-imgtxt ul { grid-template-columns: 1fr; } .svc-bub { display: none; } }
+@media (max-width: 680px) { .svc-imgrow, .svc-imgrow.reverse { grid-template-columns: 1fr; } .svc-imgrow.reverse .svc-imgwrap { order: 1; } .svc-imgrow.reverse .svc-imgtxt { order: 2; } .svc-imgtxt ul { grid-template-columns: 1fr; } }
 
 .proj-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(14px, 1.6vw, 26px); }
 .proj { position: relative; border-radius: var(--brand-radius); overflow: hidden; background: var(--bg-soft); }
@@ -890,8 +892,8 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
   .dk-mlist li{ cursor: pointer; }
   .dk-mlist li:hover .dk-mbubble{ opacity: 0; visibility: hidden; pointer-events: none; }
   .dk-mlist:hover li:not(:hover){ opacity: 1; }
-  .dk-mbubble{ left: 50%; right: auto; top: auto; bottom: calc(100% + 14px); transform: translate(-50%, 6px); width: min(360px, 86vw); max-width: none; }
-  .dk-mbubble::before{ left: 50%; right: auto; top: 100%; transform: translateX(-50%); border: 9px solid transparent; border-top-color: #fff; border-bottom: 0; border-right-color: transparent; }
+  .dk-mbubble{ left: 50%; right: auto; bottom: auto; top: calc(100% + 14px); transform: translate(-50%, 6px); width: min(360px, 86vw); max-width: none; }
+  .dk-mbubble::before{ left: 50%; right: auto; bottom: 100%; top: auto; transform: translateX(-50%); border: 9px solid transparent; border-bottom-color: #fff; border-top: 0; border-right-color: transparent; }
   .dk-mlist li.open .dk-mbubble{ opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); }
 }
 .dk-refs{padding:clamp(70px,10vh,150px) 0 0;position:relative;overflow:hidden}
@@ -994,7 +996,6 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 :root #contact .btn{background:#fff;color:var(--c-primary)}
 :root #contact .btn .arrow{color:var(--c-primary)}
 :root #contact .coords .social{color:#fff}
-:root #contact .coords .social svg{fill:#fff}
 :root #contact .coords{margin-top:clamp(34px,5vh,60px)}
 :root .footer{padding-top:clamp(26px,3.5vh,46px)}
 
@@ -1043,9 +1044,9 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 @media (max-width: 768px){
   .svc-imgtxt ul{ grid-template-columns: 1fr; }
   .svc-imgtxt li{ cursor: pointer; }
-  .svc-bub{ display: none; position: static; left: auto; bottom: auto; transform: none; width: 100%; max-width: none; margin-top: 10px; opacity: 1; visibility: visible; pointer-events: auto; box-shadow: 0 14px 40px -18px rgba(0,0,0,.4); }
-  .svc-bub::after{ display: none; }
-  .svc-imgtxt li.open .svc-bub{ display: block; }
+  .svc-bub{ position: absolute; left: 50%; top: calc(100% + 12px); bottom: auto; transform: translate(-50%, 6px); width: min(320px, 82vw); max-width: none; margin: 0; opacity: 0; visibility: hidden; pointer-events: none; box-shadow: 0 18px 45px -16px rgba(0,0,0,.5); }
+  .svc-bub::after{ display: block; left: 50%; right: auto; top: auto; bottom: 100%; transform: translateX(-50%); border: 8px solid transparent; border-bottom-color: #fff; border-top: 0; }
+  .svc-imgtxt li.open .svc-bub{ opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); }
 }
 
 /* =========================================================
@@ -1131,4 +1132,9 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
   .svc-menurow .svc-menuimg, .svc-menurow.reverse .svc-menuimg { order: 1; }
   .svc-menurow .svc-menutxt, .svc-menurow.reverse .svc-menutxt { order: 2; }
   .svc-menulist.cols2 { columns: 1; }
+}
+
+/* Mobile Hors d'Œuvre : logos de la bande chromée plus rapides */
+@media (max-width: 600px) {
+  .clients-hdo { animation-duration: 16s; }
 }

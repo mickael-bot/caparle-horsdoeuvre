@@ -687,15 +687,19 @@
      sous l'élément. (En desktop le survol reste géré par le CSS.)
   --------------------------------------------------------- */
   function initTapBubbles() {
+    const sel = ".dk-mlist li, .svc-imgtxt li, .dk-mright-pillars > div";
+    const closeAll = () => document.querySelectorAll(sel).forEach((o) => o.classList.remove("open"));
     document.addEventListener("click", (e) => {
-      if (e.target.closest("a, .dk-mbubble, .svc-bub")) return;
-      const li = e.target.closest(".dk-mlist li, .svc-imgtxt li, .dk-mright-pillars > div");
-      if (!li) return;
-      const wasOpen = li.classList.contains("open");
-      const list = li.parentElement;
-      if (list) list.querySelectorAll(".open").forEach((o) => o.classList.remove("open"));
-      if (!wasOpen) li.classList.add("open");
+      if (e.target.closest(".dk-mbubble, .svc-bub")) return;        // tap dans une bulle ouverte : ne pas fermer
+      const item = e.target.closest(sel);
+      if (!item || e.target.closest("a")) { closeAll(); return; }   // clic ailleurs / sur un lien : tout fermer
+      const wasOpen = item.classList.contains("open");
+      closeAll();
+      if (!wasOpen) item.classList.add("open");
     });
+    // fermer aussi au scroll (page + modales qui scrollent en interne)
+    window.addEventListener("scroll", closeAll, { passive: true });
+    document.querySelectorAll(".svc-modal, .proj-modal, .team-modal, .member-modal, .brief-modal").forEach((m) => m.addEventListener("scroll", closeAll, { passive: true }));
   }
 
   /* ---------------------------------------------------------
