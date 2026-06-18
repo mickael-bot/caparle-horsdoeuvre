@@ -1087,3 +1087,11 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
   :root[data-brand="hors-doeuvre"] .dk-metiers > .wrap { grid-template-columns: 1fr; }
   .dk-mright-pillars { grid-template-columns: 1fr; }
 }
+
+/* Fenêtre Services HDO : les 3 piliers (mêmes bulles) sur fond clair → titres foncés */
+.svc-hdo .svc-pillars { margin-top: clamp(40px,6vh,80px); }
+.svc-hdo .svc-pillars h4 { color: var(--fg); }
+
+/* HDO « Le Brief » : les métiers sont des liens cliquables (vers la fenêtre Services), orange au survol, sans bulle */
+.dk-mlist li > a { display: flex; gap: 16px; align-items: baseline; width: 100%; color: inherit; text-decoration: none; cursor: pointer; transition: color .2s; }
+.dk-mlist li > a:hover { color: var(--c-primary); }
