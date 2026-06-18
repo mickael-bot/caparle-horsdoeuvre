@@ -114,7 +114,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .mini-switch { display: inline-flex; align-items: center; gap: 12px; font-family: "Space Mono", monospace; font-size: .54rem; letter-spacing: .05em; text-transform: uppercase; color: var(--fg-dim); user-select: none; }
 .mini-switch .ms-name { cursor: pointer; transition: color .25s; white-space: nowrap; }
 .mini-switch .ms-name.on { color: var(--fg); }
-.ms-name .ms-logo { height: 48px; width: auto; display: block; opacity: .42; transition: opacity .25s; filter: drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff); }
+.ms-name .ms-logo { height: 48px; width: auto; display: block; opacity: .42; transition: opacity .25s; }
+/* fin cadre blanc autour de chaque logo (un vrai contour, pas un halo) */
+.mini-switch .ms-name { border: 1px solid rgba(255,255,255,.75); border-radius: 8px; padding: 4px 9px; }
 .ms-name.on .ms-logo { opacity: 1; }
 .ms-track { position: relative; width: 48px; height: 26px; border-radius: 100px; background: var(--bg-grey); border: 1px solid var(--line); flex: none; cursor: pointer; padding: 0; }
 .ms-dot { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); transition: transform .35s var(--ease); }
