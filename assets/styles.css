@@ -368,7 +368,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .footer-mark { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 11vw, 8.5rem); line-height: .9; letter-spacing: -.03em; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--fg); margin: 0 0 clamp(22px, 3vh, 40px); white-space: nowrap; }
 /* Hors d'Œuvre uniquement : masque le grand titre de marque en bas de page */
 /* Footer logo : uniquement sur Hors d'Œuvre (orange), pas sur Ça Parle (bleu) */
-:root:not([data-brand]) .footer-mark { display: none; }
+:root .footer-mark { display: none; }
 .footer-logo-hdo { display: none; }
 :root[data-brand="hors-doeuvre"] .footer-logo-cp { display: none; }
 :root[data-brand="hors-doeuvre"] .footer-logo-hdo { display: block; height: clamp(48px, 8vw, 110px); }
@@ -809,7 +809,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 
 /* ===================== SERVICES EN MODALE (pleine largeur) ===================== */
 /* La promesse quitte le fil côté Ça Parle (elle vit dans la fenêtre Services). HDO garde ses piliers dans le fil. */
-:root:not([data-brand]) #piliers { display: none; }
+#piliers { display: none; }
 
 .svc-modal, .proj-modal { position: fixed; inset: 0; z-index: 9000; display: none; overflow-y: auto; -webkit-overflow-scrolling: touch; background: rgba(12,14,18,.72); padding: clamp(18px,5vh,60px) 0 0 0; }
 .svc-modal.open, .proj-modal.open { display: block; }
@@ -865,7 +865,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .dk-blue{color:var(--c-primary)}
 .dk-sub{color:var(--fg-dim);max-width:34ch;margin-top:18px}
 /* Cote Ca Parle : pas de bulle "tag" sur les photos projets, seulement le gros titre blanc */
-:root:not([data-brand]) .proj .tag{display:none}
+:root .proj .tag{display:none}
 .dk-mlist{list-style:none}
 .dk-mlist li{position:relative;display:flex;gap:16px;align-items:baseline;padding:16px 0;border-top:1px solid var(--line);font-family:var(--font-display);font-weight:500;font-size:clamp(1.1rem,1.6vw,1.5rem);cursor:default;transition:opacity .2s}
 .dk-mlist li span{font-family:"Space Mono",monospace;font-size:.8rem;color:var(--c-primary)}
@@ -949,45 +949,44 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 @media(max-width:820px){.dk-trow{grid-template-columns:1fr}.dk-cards{grid-template-columns:1fr}}
 
 /* Scoping : la maquette uniquement côté Ça Parle */
-:root[data-brand="hors-doeuvre"] .cp-home{display:none}
 /* Côté Ça Parle : on masque les anciennes sections (remplacées par la maquette) */
-:root:not([data-brand]) #agence,
-:root:not([data-brand]) #services,
-:root:not([data-brand]) #projets,
-:root:not([data-brand]) .section.testi{display:none}
+#agence,
+#services,
+#projets,
+.section.testi{display:none}
 /* Côté Ça Parle : section contact en bleu + espace réduit */
-:root:not([data-brand]) #contact{background:transparent;padding-bottom:clamp(26px,3.5vh,46px)}
+:root #contact{background:transparent;padding-bottom:clamp(26px,3.5vh,46px)}
 /* Bloc contact CP plus grand (présence comme « Passons à table. ») */
-:root:not([data-brand]) #contact h2{font-size:clamp(3.6rem,14vw,13rem)}
-:root:not([data-brand]) #contact .intro{font-size:clamp(1.05rem,1.45vw,1.4rem);max-width:46ch}
-:root:not([data-brand]) #contact .btn{font-size:1.05rem;padding:18px 38px}
+:root #contact h2{font-size:clamp(3.6rem,14vw,13rem)}
+:root #contact .intro{font-size:clamp(1.05rem,1.45vw,1.4rem);max-width:46ch}
+:root #contact .btn{font-size:1.05rem;padding:18px 38px}
 /* Contact CP : aligné à gauche, indenté pour dégager la forme chromée de gauche ; titre sur 2 lignes */
-:root:not([data-brand]) #contact .wrap{text-align:left;padding-left:clamp(20px,5vw,80px)}
-:root:not([data-brand]) #contact h2{max-width:none;font-size:clamp(3rem,11.5vw,12rem)}
+:root #contact .wrap{text-align:left;padding-left:clamp(20px,5vw,80px)}
+:root #contact h2{max-width:none;font-size:clamp(3rem,11.5vw,12rem)}
 /* on retire la phrase « Quand l'énergie... » côté Ça Parle */
-:root:not([data-brand]) .footer-tag{display:none}
+:root .footer-tag{display:none}
 
 
 /* Bas de page : bleu + forme chromée (Ça Parle uniquement) */
 .cp-bottom{position:relative;overflow:hidden}
-:root:not([data-brand]) .cp-bottom{background:var(--c-primary)}
+.cp-bottom{background:var(--c-primary)}
 .cp-chrome{position:absolute;top:-28%;left:0;width:100%;height:148%;object-fit:fill;pointer-events:none;z-index:1}
 :root[data-brand="hors-doeuvre"] .cp-chrome{display:none}
-:root:not([data-brand]) .cp-bottom #contact,
-:root:not([data-brand]) .cp-bottom .footer{background:transparent;position:relative;z-index:2}
+:root .cp-bottom #contact,
+:root .cp-bottom .footer{background:transparent;position:relative;z-index:2}
 
-:root:not([data-brand]) #contact .eyebrow{display:none}
-:root:not([data-brand]) #contact h2,
-:root:not([data-brand]) #contact .intro,
-:root:not([data-brand]) #contact .coords p,
-:root:not([data-brand]) #contact .coords a{color:#fff}
-:root:not([data-brand]) #contact .coords .k{color:rgba(255,255,255,.7)}
-:root:not([data-brand]) #contact .btn{background:#fff;color:var(--c-primary)}
-:root:not([data-brand]) #contact .btn .arrow{color:var(--c-primary)}
-:root:not([data-brand]) #contact .coords .social{color:#fff}
-:root:not([data-brand]) #contact .coords .social svg{fill:#fff}
-:root:not([data-brand]) #contact .coords{margin-top:clamp(34px,5vh,60px)}
-:root:not([data-brand]) .footer{padding-top:clamp(26px,3.5vh,46px)}
+:root #contact .eyebrow{display:none}
+:root #contact h2,
+:root #contact .intro,
+:root #contact .coords p,
+:root #contact .coords a{color:#fff}
+:root #contact .coords .k{color:rgba(255,255,255,.7)}
+:root #contact .btn{background:#fff;color:var(--c-primary)}
+:root #contact .btn .arrow{color:var(--c-primary)}
+:root #contact .coords .social{color:#fff}
+:root #contact .coords .social svg{fill:#fff}
+:root #contact .coords{margin-top:clamp(34px,5vh,60px)}
+:root .footer{padding-top:clamp(26px,3.5vh,46px)}
 
 /* Membres d'équipe non cliquables côté Ça Parle (pas de fiche) */
 :root:not([data-brand]) .member{cursor:default}
@@ -1016,15 +1015,15 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
    coords sans "Reseaux" + centrees + lisibles, footer = Mentions a gauche / reseaux a droite */
 @media (max-width: 600px){
   .cp-chrome{ display: none; }
-  :root:not([data-brand]) #contact .wrap{ text-align: center; padding-left: clamp(16px,4vw,30px); padding-right: clamp(16px,4vw,30px); }
-  :root:not([data-brand]) #contact .intro{ margin-left: auto; margin-right: auto; }
+  :root #contact .wrap{ text-align: center; padding-left: clamp(16px,4vw,30px); padding-right: clamp(16px,4vw,30px); }
+  :root #contact .intro{ margin-left: auto; margin-right: auto; }
   .coords{ grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: clamp(30px,5vh,50px); padding-top: 24px; text-align: center; }
   .coords .col-reseaux{ display: none; }
   .coords .col{ min-width: 0; }
-  :root:not([data-brand]) #contact .coords{ border-top-color: rgba(255,255,255,.22); }
+  :root #contact .coords{ border-top-color: rgba(255,255,255,.22); }
   .coords .col .k{ font-size: .56rem; letter-spacing: .08em; margin-bottom: 6px; }
-  :root:not([data-brand]) #contact .coords .col .k{ color: rgba(255,255,255,.72); }
-  :root:not([data-brand]) #contact .coords .col a, :root:not([data-brand]) #contact .coords .col p{ color: #fff; font-weight: 500; font-size: .82rem; line-height: 1.35; overflow-wrap: anywhere; }
+  :root #contact .coords .col .k{ color: rgba(255,255,255,.72); }
+  :root #contact .coords .col a, :root #contact .coords .col p{ color: #fff; font-weight: 500; font-size: .82rem; line-height: 1.35; overflow-wrap: anywhere; }
   /* footer : ne garder que Mentions legales (gauche) + reseaux (droite) */
   .footer-links .f-brief, .footer-links .f-presse, .footer-sister{ display: none; }
   .footer-bottom{ flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; }

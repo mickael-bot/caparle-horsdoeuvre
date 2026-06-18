@@ -351,6 +351,8 @@
     document.querySelectorAll("[data-brand-name]").forEach((el) => (el.textContent = NAMES[brand] || NAMES["ca-parle"]));
     const navLogo = document.querySelector(".nav-logo-img");
     if (navLogo) navLogo.src = brand === "hors-doeuvre" ? "assets/logo-horsdoeuvre.png" : "assets/logo-caparle.png";
+    const cityMap = document.querySelector(".dk-citymap");
+    if (cityMap) cityMap.src = brand === "hors-doeuvre" ? "assets/plan-marseille-hdo.png" : "assets/plan-marseille.png";
     document.querySelectorAll("[data-set]").forEach((s) => s.classList.toggle("on", s.getAttribute("data-set") === brand));
     document.querySelectorAll(".bt-switch,[data-mini]").forEach((sw) => sw.setAttribute("aria-checked", brand === "hors-doeuvre" ? "true" : "false"));
     applyCopy(brand);
