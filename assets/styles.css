@@ -1138,3 +1138,18 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 @media (max-width: 600px) {
   .clients-hdo { animation-duration: 16s; }
 }
+
+/* Mobile Hors d'Œuvre — fenêtre Services : les 3 piliers alignés à gauche (comme Direction), empilés, en orange */
+@media (max-width: 768px) {
+  .svc-hdo .svc-pillars > div:nth-child(2),
+  .svc-hdo .svc-pillars > div:nth-child(3) { text-align: left; }
+  .svc-hdo .svc-pillars > div h4 { color: var(--c-primary); transform-origin: left center; }
+  .svc-hdo .svc-pillars > div:nth-child(2) p,
+  .svc-hdo .svc-pillars > div:nth-child(3) p { left: 0; right: auto; transform: translateY(-8px); }
+  .svc-hdo .svc-pillars > div:nth-child(2) p::before,
+  .svc-hdo .svc-pillars > div:nth-child(3) p::before { left: 24px; right: auto; transform: none; }
+  .svc-hdo .svc-pillars > div:nth-child(2):hover p,
+  .svc-hdo .svc-pillars > div:nth-child(3):hover p,
+  .svc-hdo .svc-pillars > div:nth-child(2).open p,
+  .svc-hdo .svc-pillars > div:nth-child(3).open p { transform: translateY(0); }
+}
