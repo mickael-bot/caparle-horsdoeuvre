@@ -689,11 +689,11 @@
   function initTapBubbles() {
     document.addEventListener("click", (e) => {
       if (e.target.closest("a, .dk-mbubble, .svc-bub")) return;
-      const li = e.target.closest(".dk-mlist li, .svc-imgtxt li");
+      const li = e.target.closest(".dk-mlist li, .svc-imgtxt li, .dk-mright-pillars > div");
       if (!li) return;
       const wasOpen = li.classList.contains("open");
       const list = li.parentElement;
-      if (list) list.querySelectorAll("li.open").forEach((o) => o.classList.remove("open"));
+      if (list) list.querySelectorAll(".open").forEach((o) => o.classList.remove("open"));
       if (!wasOpen) li.classList.add("open");
     });
   }
