@@ -316,6 +316,7 @@
     formNote: "En envoyant ce brief, vous acceptez d'être recontacté par l'équipe Hors d'Œuvre.",
     footerSister: "Revenir sur Ça Parle →",
     footerTag: "Toujours avec un temps d'avance. Marseille et partout ailleurs.",
+    dkMetiersTitle: 'Le Brief.',
     dkIntro: '<p>Hors d’Œuvre est un food studio événementiel qui transforme la gastronomie en expérience de marque.</p><p>Ni traiteur classique, ni simple service culinaire, Hors d’Œuvre imagine la cuisine comme un langage visuel, sensoriel et émotionnel. Chaque table, chaque plat, chaque détail devient une intention : une façon de raconter une marque, de créer une atmosphère et de provoquer un souvenir.</p><p>Ici, on compose des moments plus qu’on ne sert à manger.</p><p>Des expériences pensées avec la précision d’un studio créatif, l’exigence d’une brigade et l’audace d’une direction artistique contemporaine.</p><div class="dk-end">On crée une impulsion.</div>',
     dkProjTitle: 'Des tables<br><span class="dk-blue">qui marquent.</span>',
     dkProjSub: 'Cocktails dînatoires, brand events, art de la table, congrès, dîners assis. Chaque format pensé pour le moment qu’il accompagne.',

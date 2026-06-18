@@ -127,6 +127,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Nav transparente au scroll : liens blancs par défaut, foncés au-dessus d'une section claire */
 .nav.on-light .nav-links a:not(.btn){color:var(--fg);border-color:rgba(6,22,48,.28)}
 .nav.on-light .nav-links a:not(.btn):hover{background:var(--c-primary);border-color:var(--c-primary);color:#fff}
+/* CTA de la nav : devient blanc (texte couleur marque) une fois scrollé, pour rester visible sur les fonds colorés (orange HDO / bleu CP) */
+.nav.scrolled .nav-links .btn{ background:#fff; color:var(--c-primary); box-shadow:0 4px 18px -6px rgba(0,0,0,.25); }
+.nav.scrolled .nav-links .btn .arrow{ color:var(--c-primary); }
 
 .btn {
   --btn-bg: var(--c-primary); --btn-fg: #fff;
@@ -164,8 +167,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero-bg-label { position: absolute; right: clamp(20px,5vw,80px); bottom: clamp(20px,5vh,60px); font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: color-mix(in srgb, var(--fg) 34%, transparent); }
 .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(95deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 78%, transparent) 42%, color-mix(in srgb, var(--bg) 30%, transparent) 72%, transparent 100%); }
 .hero-inner { position: relative; z-index: 4; }
-:root:not([data-brand]) .hero::after { display: none; }
+.hero::after { display: none; }
 :root:not([data-brand]) .hero-tagline { color: #fff; }
+/* HDO : vidéo nette (pas de voile) + logo seul (pas de phrase ni boutons) */
+:root[data-brand="hors-doeuvre"] .hero-bg { background: none; }
+:root[data-brand="hors-doeuvre"] .hero-tagline,
+:root[data-brand="hors-doeuvre"] .hero-cta { display: none; }
 :root:not([data-brand]) .hero .btn.ghost { color: #fff; border-color: rgba(255,255,255,0.6); }
 :root:not([data-brand]) .hero .btn.ghost:hover { border-color: #fff; }
 .hero-loc { font-family: "Space Mono", monospace; font-size: .78rem; letter-spacing: .2em; color: var(--fg-dim); margin-bottom: 22px; }
@@ -916,6 +923,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 
 .dk-metiers{position:relative;padding:clamp(90px,14vh,180px) 0;color:#fff;overflow:hidden}
 .dk-metiers::before{content:"";position:absolute;inset:0;background:url("expertise-bg.jpg") center/cover no-repeat;z-index:0}
+:root[data-brand="hors-doeuvre"] .dk-metiers::before{background-image:url("metiers-hdo.jpg")}
 .dk-metiers::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,22,48,.82),rgba(6,22,48,.5));z-index:1}
 .dk-metiers>.wrap{position:relative;z-index:2}
 .dk-metiers .dk-mcontent{max-width:640px}
@@ -970,7 +978,7 @@ a.pillar { color: inherit; text-decoration: none; display: block; cursor: pointe
 .cp-bottom{position:relative;overflow:hidden}
 .cp-bottom{background:var(--c-primary)}
 .cp-chrome{position:absolute;top:-28%;left:0;width:100%;height:148%;object-fit:fill;pointer-events:none;z-index:1}
-:root[data-brand="hors-doeuvre"] .cp-chrome{display:none}
+/* formes chromées du bas : affichées pour les deux marques */
 :root .cp-bottom #contact,
 :root .cp-bottom .footer{background:transparent;position:relative;z-index:2}
 
